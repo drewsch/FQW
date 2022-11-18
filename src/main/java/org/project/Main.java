@@ -15,7 +15,7 @@ public class Main {
         DataFormatter formatter = new DataFormatter();
         UartSender sender = new UartSender(UART_HOST);
 
-        sender.send(formatter.format("/Users/kirillzubarev/IdeaProjects/kids_project/test.txt"));
+        sender.send(formatter.format("/Users//IdeaProjects/kids_project/test.txt"));
 
         UartReader reader = new UartReader(UART_HOST);
 
