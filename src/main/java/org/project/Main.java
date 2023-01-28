@@ -1,41 +1,29 @@
 package org.project;
 
+import jssc.SerialPortException;
 import org.project.services.fileFormatter.DataFormatter;
-import org.project.services.matrixMath.Matrix;
-import org.project.services.presentor.Presenter;
 import org.project.services.uart.UartReader;
 import org.project.services.uart.UartSender;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Main {
-    private static final String UART_HOST = "localhost:3213";
+    private static final String UART_PORT = "COM1";
 
-    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
+    public static void main(String[] args) throws FileNotFoundException, SerialPortException {
         DataFormatter formatter = new DataFormatter();
-        UartSender sender = new UartSender(UART_HOST);
+        UartSender sender = new UartSender(UART_PORT);
 
-        sender.send(formatter.format("/Users//IdeaProjects/kids_project/test.txt"));
+        sender.send(formatter.format("/Users/IdeaProjects/kids_project/test.txt"));
 
-        UartReader reader = new UartReader(UART_HOST);
+        UartReader reader = new UartReader(UART_PORT);
 
-        Matrix matrix = new Matrix(reader.read());
+        ArrayList<Double> results = reader.read();
 
-        matrix.someMath();
+        for (Double s: results) {
+            System.out.println(s);
+        }
 
-        Presenter presenter = new Presenter(matrix.math());
-
-        presenter.getGraphs();
     }
 }
-
-/*
-
-
-2) formatter -- formatted data //
-3) uart -- transfer to uart/grep data from uart
-4) matrixMath -- make some math
-5) complexMath -- make some math with complex nums
-6) output (graphs)
-
- */
