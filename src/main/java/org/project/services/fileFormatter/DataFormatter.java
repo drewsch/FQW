@@ -20,10 +20,7 @@ public class DataFormatter {
         try {
             String line = reader.readLine();
             while (line != null) {
-                for (int i = 0; i < line.split(" ").length; i++) {
-                    result.add(Double.parseDouble(line.split(" ")[i]));
-                }
-                // read next line
+                result.add(Double.parseDouble(line));
                 line = reader.readLine();
             }
             reader.close();

@@ -1,29 +1,30 @@
 package org.project;
 
+import jssc.SerialPort;
 import jssc.SerialPortException;
+import org.apache.log4j.PropertyConfigurator;
 import org.project.services.fileFormatter.DataFormatter;
 import org.project.services.uart.UartReader;
 import org.project.services.uart.UartSender;
 
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class Main {
     private static final String UART_PORT = "COM1";
 
     public static void main(String[] args) throws FileNotFoundException, SerialPortException {
+        configureLogger();
         DataFormatter formatter = new DataFormatter();
-        UartSender sender = new UartSender(UART_PORT);
 
-        sender.send(formatter.format("/Users/IdeaProjects/kids_project/test.txt"));
+        UartSender sender = new UartSender();
 
-        UartReader reader = new UartReader(UART_PORT);
+        sender.send(formatter.format("C:\\Users\\Андрей\\Desktop\\FQW\\FQW\\test.txt"), new SerialPort(UART_PORT), new UartReader());
 
-        ArrayList<Double> results = reader.read();
+    }
 
-        for (Double s: results) {
-            System.out.println(s);
-        }
-
+    public static void configureLogger() {
+        String sys = System.getProperty("user.dir") + File.separator + "src/log4j.properties";
+        PropertyConfigurator.configure(sys);
     }
 }
