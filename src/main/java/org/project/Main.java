@@ -11,9 +11,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Main {
-    private static final String UART_PORT = "COM1";
+    private static final String UART_PORT = "COM4";
 
-    public static void main(String[] args) throws FileNotFoundException, SerialPortException {
+    public static void main(String[] args) throws FileNotFoundException, SerialPortException, InterruptedException {
         configureLogger();
         DataFormatter formatter = new DataFormatter();
 

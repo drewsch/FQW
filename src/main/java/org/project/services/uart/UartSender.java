@@ -6,23 +6,24 @@ import jssc.*;
 
 public class UartSender {
 
-    public void send(ArrayList<Double> inputData, SerialPort senderPort, UartReader reader) throws SerialPortException {
-        SerialPort portReader = new SerialPort("COM2");
+    public void send(ArrayList<Double> inputData, SerialPort senderPort, UartReader reader) throws SerialPortException, InterruptedException {
+        SerialPort portReader = new SerialPort("COM4");
 
-        senderPort.openPort();
+        //senderPort.openPort();
         portReader.openPort();
 
-        senderPort.setParams(9600, 8, 1, 0);
+       // senderPort.setParams(9600, 8, 1, 0);
 
-        this.getBytes(inputData, senderPort, reader, portReader);
+        this.getBytes(inputData,  portReader, reader, portReader);
 
-        senderPort.closePort();
+       // portReader.closePort();
     }
 
-    private void getBytes(ArrayList<Double> inputData, SerialPort port, UartReader reader, SerialPort portReader) throws SerialPortException {
+    private void getBytes(ArrayList<Double> inputData, SerialPort port, UartReader reader, SerialPort portReader) throws SerialPortException, InterruptedException {
 
         for (Double inputDatum : inputData) {
             port.writeString(inputDatum.toString());
+            Thread.sleep(1500);
             reader.read(portReader);
         }
 
