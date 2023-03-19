@@ -108,7 +108,7 @@ public class GUIMainForm extends JFrame {
         });
 
         startButton.addActionListener(new ActionListener() {
-            private static final String UART_PORT = "COM1";
+            private static final String UART_PORT = "COM4";
             @Override
             public void actionPerformed(ActionEvent e) {
                 DataFormatter formatter = new DataFormatter();
@@ -121,14 +121,14 @@ public class GUIMainForm extends JFrame {
                 }
 
                 UartReader reader = new UartReader(UART_PORT);
-
+                System.out.println("передал х2");
                 ArrayList<Double> results = null;
                 try {
                     results = reader.read();
                 } catch (SerialPortException ex) {
                     throw new RuntimeException(ex);
                 }
-
+                System.out.println("Вывод");
                 for (Double s: results) {
                     System.out.println(s);
                 }
