@@ -122,14 +122,14 @@ public class GUIMainForm extends JFrame {
 
                 UartReader reader = new UartReader(UART_PORT);
                 System.out.println("передал х2");
-                ArrayList<Double> results = null;
+                ArrayList<String> results = null;
                 try {
                     results = reader.read();
-                } catch (SerialPortException ex) {
+                } catch (SerialPortException | InterruptedException ex) {
                     throw new RuntimeException(ex);
                 }
                 System.out.println("Вывод");
-                for (Double s: results) {
+                for (String s: results) {
                     System.out.println(s);
                 }
             }

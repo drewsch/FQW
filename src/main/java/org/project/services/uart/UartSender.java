@@ -22,7 +22,6 @@ public class UartSender {
         port.setParams(9600, 8, 1, 0);
 
         //port.writeBytes(this.getBytes(inputData));
-
         port.writeString(Arrays.toString(getDoubleData(inputData)));
         System.out.println("передал");
         port.closePort();
