@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="refactoring">
+    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="test reading complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Андрей/Desktop/FQW/FQW&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -89,7 +87,19 @@
       <updated>1668794208828</updated>
       <workItem from="1668799128147" duration="44000" />
       <workItem from="1668799178522" duration="37000" />
+      <workItem from="1679583233459" duration="1000" />
+      <workItem from="1679649264108" duration="135000" />
+      <workItem from="1679649409046" duration="150000" />
+      <workItem from="1679649580455" duration="811000" />
     </task>
+    <task id="LOCAL-00001" summary="test reading complete">
+      <created>1679256344480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679256344480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add GUI form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GUI form" />
+    <MESSAGE value="test reading complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="test reading complete" />
   </component>
 </project>

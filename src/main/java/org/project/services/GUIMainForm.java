@@ -36,6 +36,7 @@ public class GUIMainForm extends JFrame {
     private JButton startButton;
     private final JFileChooser fc = new JFileChooser();
     private int result;
+    private String strFormatFile;
 
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
@@ -103,6 +104,7 @@ public class GUIMainForm extends JFrame {
             public void stateChanged(ChangeEvent e) {
                 if (result == JFileChooser.APPROVE_OPTION ) {
                     textField1.setText(fc.getName(fc.getSelectedFile()));
+                    strFormatFile = String.valueOf(fc.getSelectedFile());
                 }
             }
         });
@@ -113,9 +115,9 @@ public class GUIMainForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 DataFormatter formatter = new DataFormatter();
                 UartSender sender = new UartSender(UART_PORT);
-
                 try {
-                    sender.send(formatter.format("C:\\Users\\Андрей\\Desktop\\FQW\\FQW\\test.txt"));
+                    //sender.send(formatter.format("C:\\Users\\Андрей\\Desktop\\FQW\\FQW\\test.txt"));
+                    sender.send(formatter.format(strFormatFile));
                 } catch (SerialPortException | FileNotFoundException ex) {
                     throw new RuntimeException(ex);
                 }
