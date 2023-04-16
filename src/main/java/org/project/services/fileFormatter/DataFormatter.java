@@ -5,15 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DataFormatter {
-    public ArrayList<Double> format(String filePath) throws FileNotFoundException {
+    private int arrayFileLength = 100;
+    public double[][] format(String filePath) throws FileNotFoundException {
         return this.readFile(filePath);
     }
 
-    private ArrayList<Double> readFile(String filePath) throws FileNotFoundException {
+    private double[][] readFile(String filePath) throws FileNotFoundException {
         BufferedReader reader;
-        ArrayList<Double> result = new ArrayList<>();
+        double[][] ArrayFile = new double[2][arrayFileLength];
 
         reader = new BufferedReader(new FileReader(filePath));
 
@@ -21,9 +23,11 @@ public class DataFormatter {
             String line = reader.readLine();
             while (line != null) {
                 for (int i = 0; i < line.split(" ").length; i++) {
-                    result.add(Double.parseDouble(line.split(" ")[i]));
+                    for (int j = 0; j < line.split(" ").length; j++) {
+
+                        ArrayFile[i][j] = Double.parseDouble(line.split(" ")[i]);// ??
+                    }
                 }
-                // read next line
                 line = reader.readLine();
             }
             reader.close();
@@ -31,6 +35,6 @@ public class DataFormatter {
             System.out.println(e.getMessage());
         }
 
-        return result;
+        return ArrayFile;
     }
 }

@@ -3,17 +3,19 @@ package org.project.services.uart;
 import java.util.ArrayList;
 
 import jssc.*;
+import org.project.services.IReader;
 
 
-public class UartReader {
+public class UartReader implements IReader {
     private final String port;
+
     public UartReader(String port) {
         this.port = port;
     }
 
-    public ArrayList<String> read() throws SerialPortException, InterruptedException {
+    public double[][] read() throws SerialPortException, InterruptedException {
 
-        ArrayList<String> result = new ArrayList<>();
+        double[][] arrayReadPort = new double[][];
         SerialPort port = new SerialPort(this.port);
 
         port.openPort();
@@ -25,5 +27,10 @@ public class UartReader {
         }
         return result;
 
+    }
+
+    @Override
+    public double[][] uartRead() {
+        return new double[0][];
     }
 }

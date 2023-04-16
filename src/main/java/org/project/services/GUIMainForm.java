@@ -25,7 +25,7 @@ public class GUIMainForm extends JFrame {
     private JPanel chLabelPanel;
     private JPanel ParametersPanel;
     private JPanel radioPanel;
-    private JRadioButton bandPassRadioButton;
+    private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton radioButton2;
     private JRadioButton radioButton3;
     private JPanel showParameters;
