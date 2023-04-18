@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="test reading complete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/IReader.java" afterDir="false" />
+    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="343">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/outDoubleArray/OutDoubleArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/IReader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/uart/UartSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -111,6 +114,7 @@
       <workItem from="1679649580455" duration="811000" />
       <workItem from="1681478397700" duration="430000" />
       <workItem from="1681668356832" duration="2471000" />
+      <workItem from="1681822727506" duration="6161000" />
     </task>
     <task id="LOCAL-00001" summary="test reading complete">
       <created>1679256344480</created>

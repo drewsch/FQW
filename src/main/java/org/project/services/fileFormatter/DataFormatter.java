@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DataFormatter {
-    private int arrayFileLength = 100;
+    private int arrayFileLength = 10;
     public double[][] format(String filePath) throws FileNotFoundException {
-        return this.readFile(filePath);
+        return readFile(filePath);
     }
 
     private double[][] readFile(String filePath) throws FileNotFoundException {
@@ -22,13 +22,12 @@ public class DataFormatter {
         try {
             String line = reader.readLine();
             while (line != null) {
-                for (int i = 0; i < line.split(" ").length; i++) {
+                for (int i = 0; i < 2; i++) {
                     for (int j = 0; j < line.split(" ").length; j++) {
-
-                        ArrayFile[i][j] = Double.parseDouble(line.split(" ")[i]);// ??
+                        ArrayFile[i][j] = Double.parseDouble(line.split(" ")[j]);
                     }
+                    line = reader.readLine();
                 }
-                line = reader.readLine();
             }
             reader.close();
         } catch (IOException e) {

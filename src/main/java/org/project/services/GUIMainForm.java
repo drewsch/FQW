@@ -1,6 +1,6 @@
 package org.project.services;
 
-import jssc.SerialPortException;
+import org.project.services.outDoubleArray.OutDoubleArray;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -9,11 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.FileNotFoundException;
-import org.project.services.fileFormatter.DataFormatter;
-import org.project.services.uart.UartReader;
-import org.project.services.uart.UartSender;
-import java.util.ArrayList;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
@@ -36,7 +31,7 @@ public class GUIMainForm extends JFrame {
     private JButton startButton;
     private final JFileChooser fc = new JFileChooser();
     private int result;
-    private String strFormatFile;
+    public String strFormatFile;
 
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
@@ -110,30 +105,11 @@ public class GUIMainForm extends JFrame {
         });
 
         startButton.addActionListener(new ActionListener() {
-            private static final String UART_PORT = "COM4";
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                DataFormatter formatter = new DataFormatter();
-                UartSender sender = new UartSender(UART_PORT);
-                try {
-                    //sender.send(formatter.format("C:\\Users\\Андрей\\Desktop\\FQW\\FQW\\test.txt"));
-                    sender.send(formatter.format(strFormatFile));
-                } catch (SerialPortException | FileNotFoundException ex) {
-                    throw new RuntimeException(ex);
-                }
-
-                UartReader reader = new UartReader(UART_PORT);
-                System.out.println("передал х2");
-                ArrayList<String> results = null;
-                try {
-                    results = reader.read();
-                } catch (SerialPortException | InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }
-                System.out.println("Вывод");
-                for (String s: results) {
-                    System.out.println(s);
-                }
+                OutDoubleArray outDoubleArray = new OutDoubleArray();
+                outDoubleArray.printDoubleFileArray(strFormatFile);
             }
         });
     }
