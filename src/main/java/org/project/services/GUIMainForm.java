@@ -30,6 +30,9 @@ public class GUIMainForm extends JFrame {
     private final JFileChooser fc = new JFileChooser();
     private int result;
     public String strFormatFile;
+    private Thread mainThread = null;
+
+
 
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
@@ -106,45 +109,32 @@ public class GUIMainForm extends JFrame {
             OutDoubleArray outDoubleArray = new OutDoubleArray();
             outDoubleArray.printDoubleFileArray(strFormatFile);
 
-//            bandPassChebyshevRadioButton.addActionListener(new ActionListener() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    try {
-//                        Thread.sleep(100);
-//                    } catch (InterruptedException ex) {
-//                        throw new RuntimeException(ex);
-//                    }
-//                    Thread thread = new Thread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            PlotGraph plotGraph = new PlotGraph();
-//                            plotGraph.dataGraphFilterOne(strFormatFile);
-//
-//                        }
-//                    });
-//                    thread.start();
-//                }
-//            });
-            noneRadioButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                    Thread thread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            PlotGraph plotGraph = new PlotGraph();
-                            plotGraph.dataGraphWithoutFilter(strFormatFile);
+            if (mainThread != null) {
+                mainThread.start();
+                noneRadioButton.setEnabled(false);
+                bandPassChebyshevRadioButton.setEnabled(false);
+                startButton.setEnabled(false);
+            }
+        });
 
-                        }
-                    });
-                    thread.start();
+        noneRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
                 }
-            });
 
+                mainThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        PlotGraph plotGraph = new PlotGraph();
+                        plotGraph.dataGraphFormat(strFormatFile, false);
+
+                    }
+                });
+            }
         });
 
         bandPassChebyshevRadioButton.addItemListener(new ItemListener() {
@@ -156,15 +146,14 @@ public class GUIMainForm extends JFrame {
                 } catch (InterruptedException ex) {
                     throw new RuntimeException(ex);
                 }
-                Thread thread = new Thread(new Runnable() {
+                mainThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
                         PlotGraph plotGraph = new PlotGraph();
-                        plotGraph.dataGraphFilterOne(strFormatFile);
+                        plotGraph.dataGraphFormat(strFormatFile, true);
 
                     }
                 });
-                thread.start();
             }
 
         });

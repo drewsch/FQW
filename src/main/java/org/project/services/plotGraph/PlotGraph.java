@@ -4,23 +4,14 @@ import com.github.psambit9791.jdsp.filter.Chebyshev;
 import com.github.psambit9791.jdsp.misc.Plotting;
 import org.project.services.fileFormatter.DataFormatter;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.io.IOException;
 
 public class PlotGraph extends JFrame {
     private DataFormatter formatter = new DataFormatter();
     private Plotting fig;
 
-    public void dataGraphFilterOne(String strFormatFile) {
-        parametersGraph();
-        try {
-            changeSignal(formatter.format(strFormatFile));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
 
-
-    }
     private void parametersGraph() {
         int width = 600;
         int height = 500;
@@ -49,20 +40,22 @@ public class PlotGraph extends JFrame {
         fig.plot();
     }
 
-    private void dataGraphWithoutFilter(double[][] arrayFromDataFormatter) {
+    private void dataGraphFormat(double[][] arrayFromDataFormatter) {
         fig.addSignal("Signal 1" , arrayFromDataFormatter[0], arrayFromDataFormatter[1], false);
         fig.plot();
     }
 
-    public void dataGraphWithoutFilter(String strFormatFile) {
+    public void dataGraphFormat(String strFormatFile, boolean isWithFilter) {
         parametersGraph();
         try {
-            dataGraphWithoutFilter(formatter.format(strFormatFile));
+            if (isWithFilter) {
+                changeSignal(formatter.format(strFormatFile));
+            } else {
+                dataGraphFormat(formatter.format(strFormatFile));
+            }
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-
-
     }
 }
 
