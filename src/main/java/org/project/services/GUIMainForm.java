@@ -1,14 +1,12 @@
 package org.project.services;
 
 import org.project.services.outDoubleArray.OutDoubleArray;
+import org.project.services.plotGraph.PlotGraph;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
@@ -22,7 +20,7 @@ public class GUIMainForm extends JFrame {
     private JPanel radioPanel;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton radioButton2;
-    private JRadioButton radioButton3;
+    private JRadioButton noneRadioButton;
     private JPanel showParameters;
     private JPanel outputParameters;
     private JTextField textField2;
@@ -104,13 +102,71 @@ public class GUIMainForm extends JFrame {
             }
         });
 
-        startButton.addActionListener(new ActionListener() {
+        startButton.addActionListener(e -> {
+            OutDoubleArray outDoubleArray = new OutDoubleArray();
+            outDoubleArray.printDoubleFileArray(strFormatFile);
 
+//            bandPassChebyshevRadioButton.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    try {
+//                        Thread.sleep(100);
+//                    } catch (InterruptedException ex) {
+//                        throw new RuntimeException(ex);
+//                    }
+//                    Thread thread = new Thread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            PlotGraph plotGraph = new PlotGraph();
+//                            plotGraph.dataGraphFilterOne(strFormatFile);
+//
+//                        }
+//                    });
+//                    thread.start();
+//                }
+//            });
+            noneRadioButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            PlotGraph plotGraph = new PlotGraph();
+                            plotGraph.dataGraphWithoutFilter(strFormatFile);
+
+                        }
+                    });
+                    thread.start();
+                }
+            });
+
+        });
+
+        bandPassChebyshevRadioButton.addItemListener(new ItemListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                OutDoubleArray outDoubleArray = new OutDoubleArray();
-                outDoubleArray.printDoubleFileArray(strFormatFile);
+            public void itemStateChanged(ItemEvent e) {
+
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        PlotGraph plotGraph = new PlotGraph();
+                        plotGraph.dataGraphFilterOne(strFormatFile);
+
+                    }
+                });
+                thread.start();
             }
+
         });
     }
 }

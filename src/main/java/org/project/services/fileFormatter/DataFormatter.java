@@ -9,18 +9,15 @@ import java.util.Arrays;
 
 public class DataFormatter {
     private int arrayFileLength = 10;
-    public double[][] format(String filePath) throws FileNotFoundException {
+    public double[][] format(String filePath) throws IOException {
         return readFile(filePath);
     }
-
-    private double[][] readFile(String filePath) throws FileNotFoundException {
+    private double[][] readFile(String filePath) throws IOException {
         BufferedReader reader;
-        double[][] ArrayFile = new double[2][arrayFileLength];
-
         reader = new BufferedReader(new FileReader(filePath));
+        String line = reader.readLine();
+        double[][] ArrayFile = new double[2][line.split(" ").length];
 
-        try {
-            String line = reader.readLine();
             while (line != null) {
                 for (int i = 0; i < 2; i++) {
                     for (int j = 0; j < line.split(" ").length; j++) {
@@ -30,9 +27,6 @@ public class DataFormatter {
                 }
             }
             reader.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
 
         return ArrayFile;
     }
