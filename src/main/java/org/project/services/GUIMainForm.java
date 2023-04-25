@@ -31,14 +31,14 @@ public class GUIMainForm extends JFrame {
     private int result;
     public String strFormatFile;
     private Thread mainThread = null;
-
+    private PlotGraph plotGraph = new PlotGraph();
 
 
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
         frame.setLocation(700,350);
         frame.setContentPane(new GUIMainForm().mainPanel);
-        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.addWindowListener(new WindowListener() {
@@ -52,7 +52,7 @@ public class GUIMainForm extends JFrame {
                 Object[] options = { "Да", "Нет" };
                 int n = JOptionPane
                         .showOptionDialog(e.getWindow(), "Закрыть окно?",
-                                "Подтверждение выхода", JOptionPane.YES_NO_OPTION,
+                                "Подтверждение выхода", JOptionPane.YES_NO_CANCEL_OPTION,
                                 JOptionPane.ERROR_MESSAGE, null, options,
                                 options[0]);
                 if (n == 0) {
@@ -106,6 +106,7 @@ public class GUIMainForm extends JFrame {
         });
 
         startButton.addActionListener(e -> {
+
             OutDoubleArray outDoubleArray = new OutDoubleArray();
             outDoubleArray.printDoubleFileArray(strFormatFile);
 
@@ -113,27 +114,8 @@ public class GUIMainForm extends JFrame {
                 mainThread.start();
                 noneRadioButton.setEnabled(false);
                 bandPassChebyshevRadioButton.setEnabled(false);
-                startButton.setEnabled(false);
-            }
-        });
+                //startButton.setEnabled(false);
 
-        noneRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }
-
-                mainThread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        PlotGraph plotGraph = new PlotGraph();
-                        plotGraph.dataGraphFormat(strFormatFile, false);
-
-                    }
-                });
             }
         });
 
@@ -149,14 +131,31 @@ public class GUIMainForm extends JFrame {
                 mainThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        PlotGraph plotGraph = new PlotGraph();
                         plotGraph.dataGraphFormat(strFormatFile, true);
-
                     }
                 });
             }
 
         });
+
+        noneRadioButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                mainThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        plotGraph.dataGraphFormat(strFormatFile, false);
+                    }
+                });
+            }
+        });
+
     }
 }
 

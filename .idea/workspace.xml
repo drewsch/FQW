@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="add commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/outDoubleArray/OutDoubleArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/outDoubleArray/OutDoubleArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +33,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/com/github/psambit9791/jdsp/2.0.1/jdsp-2.0.1.jar!/com/github/psambit9791/jdsp/misc/Plotting.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/knowm/xchart/xchart/3.8.1/xchart-3.8.1-sources.jar!/org/knowm/xchart/SwingWrapper.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Андрей/Desktop/FQW/FQW&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Андрей/Desktop/java_chesnokov/Task06&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -108,6 +115,11 @@
       <workItem from="1681478397700" duration="430000" />
       <workItem from="1681668356832" duration="2471000" />
       <workItem from="1681822727506" duration="6161000" />
+      <workItem from="1682241883949" duration="620000" />
+      <workItem from="1682249931808" duration="3536000" />
+      <workItem from="1682368457566" duration="538000" />
+      <workItem from="1682410406228" duration="6132000" />
+      <workItem from="1682422610515" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="test reading complete">
       <created>1679256344480</created>
@@ -130,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682163774023</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add commit">
+      <created>1682168272914</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682168272914</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

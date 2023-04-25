@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DataFormatter {
-    private int arrayFileLength = 10;
     public double[][] format(String filePath) throws IOException {
         return readFile(filePath);
     }
