@@ -19,7 +19,6 @@ public class GUIMainForm extends JFrame {
     private JPanel ParametersPanel;
     private JPanel radioPanel;
     private JRadioButton bandPassChebyshevRadioButton;
-    private JRadioButton radioButton2;
     private JRadioButton noneRadioButton;
     private JPanel showParameters;
     private JPanel outputParameters;
@@ -38,7 +37,7 @@ public class GUIMainForm extends JFrame {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
         frame.setLocation(700,350);
         frame.setContentPane(new GUIMainForm().mainPanel);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.addWindowListener(new WindowListener() {
@@ -131,7 +130,7 @@ public class GUIMainForm extends JFrame {
                 mainThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        plotGraph.dataGraphFormat(strFormatFile, true);
+                        plotGraph.signalPlot(strFormatFile, true);
                     }
                 });
             }
@@ -150,12 +149,11 @@ public class GUIMainForm extends JFrame {
                 mainThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        plotGraph.dataGraphFormat(strFormatFile, false);
+                        plotGraph.signalPlot(strFormatFile, false);
                     }
                 });
             }
         });
-
     }
 }
 
