@@ -1,3 +1,6 @@
+/**
+    @author AndreyChesnokov
+ */
 package org.project.services;
 
 import org.project.services.outDoubleArray.OutDoubleArray;
@@ -6,6 +9,7 @@ import org.project.services.plotGraph.PlotGraph;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.*;
 
 public class GUIMainForm extends JFrame {
@@ -26,6 +30,13 @@ public class GUIMainForm extends JFrame {
     private JTextField textField3;
     private JPanel footer;
     private JButton startButton;
+    private JPanel chooseParametersFilter;
+    private JSlider sliderFrequency;
+    private JLabel labelFreq;
+    private JSlider sliderLower;
+    private JSlider sliderHigher;
+    private JLabel labelLower;
+    private JLabel labelHigher;
     private final JFileChooser fc = new JFileChooser();
     private int result;
     public String strFormatFile;
@@ -36,6 +47,7 @@ public class GUIMainForm extends JFrame {
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
         frame.setLocation(700,350);
+        frame.setPreferredSize(new Dimension(600,350));
         frame.setContentPane(new GUIMainForm().mainPanel);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
@@ -85,6 +97,7 @@ public class GUIMainForm extends JFrame {
 
             }
         });
+
     }
 
     public GUIMainForm() {
@@ -93,6 +106,7 @@ public class GUIMainForm extends JFrame {
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             result = fc.showOpenDialog(GUIMainForm.this);
         });
+
 
         button1.addChangeListener(new ChangeListener() {
             @Override
@@ -121,7 +135,6 @@ public class GUIMainForm extends JFrame {
         bandPassChebyshevRadioButton.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
-
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException ex) {
@@ -135,11 +148,13 @@ public class GUIMainForm extends JFrame {
                 });
             }
 
+
         });
 
         noneRadioButton.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
+                chooseParametersFilter.setVisible(false);
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException ex) {
@@ -154,6 +169,41 @@ public class GUIMainForm extends JFrame {
                 });
             }
         });
+        chooseParametersFilter.setVisible(false);
+        bandPassChebyshevRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                chooseParametersFilter.setVisible(true);
+
+            }
+
+        });
+
+        sliderFrequency.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int sliderFrequencyValue = sliderFrequency.getValue();
+                plotGraph.setFs(sliderFrequencyValue);
+                labelFreq.setText("Frequency : " + sliderFrequencyValue);
+            }
+        });
+        sliderLower.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int sliderLowerValue = sliderLower.getValue();
+                plotGraph.setLowCutOff(sliderLowerValue);
+                labelLower.setText("Lower cut freq : " + sliderLowerValue);
+            }
+        });
+        sliderHigher.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int sliderHigherValue = sliderHigher.getValue();
+                plotGraph.setHighCutOff(sliderHigherValue);
+                labelHigher.setText(" Higher cut freq : " + sliderHigherValue);
+            }
+        });
     }
+
 }
 
