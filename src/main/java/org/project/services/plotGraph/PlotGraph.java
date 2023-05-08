@@ -50,6 +50,7 @@ public class PlotGraph {
     private void signalSimplePlot(double[][] arrayFromDataFormatter) {
         fig.addSignal("Signal 1" , arrayFromDataFormatter[0], arrayFromDataFormatter[1], false);
         fig.plot();
+
     }
 
     public void signalPlot(String strFormatFile, boolean isWithFilter) {

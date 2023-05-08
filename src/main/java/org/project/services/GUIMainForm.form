@@ -232,7 +232,7 @@
                     <properties>
                       <background color="-1"/>
                       <foreground color="-16777216"/>
-                      <text value="Frequency : 0"/>
+                      <text value="Frequency : "/>
                     </properties>
                   </component>
                   <component id="7e880" class="javax.swing.JSlider" binding="sliderLower">
@@ -258,7 +258,7 @@
                     <properties>
                       <background color="-1"/>
                       <foreground color="-16777216"/>
-                      <text value="Lower cut freq : 0 "/>
+                      <text value="Lower cut freq : "/>
                     </properties>
                   </component>
                   <component id="16d1d" class="javax.swing.JLabel" binding="labelHigher">
@@ -268,7 +268,7 @@
                     <properties>
                       <background color="-1"/>
                       <foreground color="-16777216"/>
-                      <text value="Higher cut freq : 0"/>
+                      <text value="Higher cut freq : "/>
                     </properties>
                   </component>
                 </children>
