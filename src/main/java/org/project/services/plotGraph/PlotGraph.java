@@ -26,13 +26,14 @@ public class PlotGraph {
         this.highCutOff = highCutOff;
     }
     private void parametersGraph() {
-        int width = 600;
-        int height = 500;
+        int width = 1400;
+        int height = 800;
         String title = "Sample Figure";
         String x_axis = "Time";
         String y_axis = "Signal";
         fig = new Plotting(width, height, title, x_axis, y_axis);
         fig.initialisePlot();
+        fig.addStylerCursor();
     }
     private void signalChebushevBandPassPlot(double[][] arrayFromDataFormatter) {
         int filterType = 1; //Can be 1 (for type 1) or 2 (for type 2)
