@@ -33,7 +33,7 @@ public class PlotGraph {
         String y_axis = "Signal";
         fig = new Plotting(width, height, title, x_axis, y_axis);
         fig.initialisePlot();
-        fig.addStylerCursor();
+//        fig.addStylerCursor();
     }
     private void signalChebushevBandPassPlot(double[][] arrayFromDataFormatter) {
         int filterType = 1; //Can be 1 (for type 1) or 2 (for type 2)

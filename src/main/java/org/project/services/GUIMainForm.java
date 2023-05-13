@@ -11,25 +11,20 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Set;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
-    private JPanel chooserFilesPanel;
-    private JPanel chFileNamePanel;
     private JTextField textField1;
-    private JPanel chButtonPanel;
     private JButton button1;
-    private JPanel chLabelPanel;
-    private JPanel ParametersPanel;
-    private JPanel radioPanel;
+    private JPanel panelButtonCard;
+    private JButton button2;
+    private JPanel chooserSliderPanel;
+    private JPanel parametresFiltr;
+    private JSlider slider1;
+    private JSlider slider2;
+    private JSlider slider3;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton noneRadioButton;
-    private JPanel showParameters;
-    private JPanel outputParameters;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JPanel footer;
     private JButton startButton;
     private JPanel chooseParametersFilter;
     private JSlider sliderFrequency;
@@ -53,6 +48,7 @@ public class GUIMainForm extends JFrame {
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
         frame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {

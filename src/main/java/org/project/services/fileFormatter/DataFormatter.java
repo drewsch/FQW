@@ -1,11 +1,9 @@
 package org.project.services.fileFormatter;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class DataFormatter {
     public double[][] format(String filePath) throws IOException {
