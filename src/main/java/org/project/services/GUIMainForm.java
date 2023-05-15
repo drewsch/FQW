@@ -14,7 +14,7 @@ import java.awt.event.*;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
-    private JTextField textField1;
+    private JTextField textParametresFreq1;
     private JButton button1;
     private JPanel panelButtonCard;
     private JButton button2;
@@ -23,6 +23,23 @@ public class GUIMainForm extends JFrame {
     private JSlider slider1;
     private JSlider slider2;
     private JSlider slider3;
+    private JTextField textParametresFreq2;
+    private JTextField textParametresFreq3;
+    private JPanel mainResualts;
+    private JPanel parentCardPanel;
+    private JPanel epsOutputPanel;
+    private JPanel card1CoefficientsPanel;
+    private JLabel labelArticleCard1;
+    private JPanel inputCoefficientsPanelCard1;
+    private JPanel chooseMeasurementsCard1;
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JRadioButton одиночныеИзмеренияRadioButton;
+    private JRadioButton непрервыныеИзмеренияRadioButton;
+    private JButton начатьButton;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton noneRadioButton;
     private JButton startButton;
@@ -109,7 +126,7 @@ public class GUIMainForm extends JFrame {
             @Override
             public void stateChanged(ChangeEvent e) {
                 if (result == JFileChooser.APPROVE_OPTION) {
-                    textField1.setText(fc.getName(fc.getSelectedFile()));
+                    textParametresFreq1.setText(fc.getName(fc.getSelectedFile()));
                     strFormatFile = String.valueOf(fc.getSelectedFile());
                 }
             }
