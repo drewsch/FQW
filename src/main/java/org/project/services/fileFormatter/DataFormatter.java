@@ -15,10 +15,10 @@ public class DataFormatter {
         BufferedReader reader;
         reader = new BufferedReader(new FileReader(filePath));
         String line = reader.readLine();
-        double[][] ArrayFile = new double[2][line.split(" ").length];
+        double[][] ArrayFile = new double[4][line.split(" ").length];
 
             while (line != null) {
-                for (int i = 0; i < 2; i++) {
+                for (int i = 0; i < 4; i++) {
                     for (int j = 0; j < line.split(" ").length; j++) {
                         ArrayFile[i][j] = Double.parseDouble(line.split(" ")[j]);
                     }

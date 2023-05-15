@@ -16,9 +16,9 @@ public class OutDoubleArray {
             throw new RuntimeException(ex);
         }
 
-//        System.out.println("Вывод массива");
-//        for (double[] s : results) {
-//            System.out.println(Arrays.toString(s));
-//        }
+        System.out.println("Вывод массива");
+        for (double[] s : results) {
+            System.out.println(Arrays.toString(s));
+        }
     }
 }
