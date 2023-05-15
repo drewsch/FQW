@@ -3,32 +3,20 @@
  */
 package org.project.services;
 
-import org.project.services.outDoubleArray.OutDoubleArray;
 import org.project.services.plotGraph.PlotGraph;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
-    private JTextField textParametresFreq1;
-    private JButton button1;
-    private JPanel panelButtonCard;
-    private JButton button2;
-    private JPanel chooserSliderPanel;
-    private JPanel parametresFiltr;
-    private JSlider slider1;
-    private JSlider slider2;
-    private JSlider slider3;
-    private JTextField textParametresFreq2;
-    private JTextField textParametresFreq3;
+    private JButton buttonSendParameters;
+    private JPanel panelButtonChoosesCards;
+    private JButton buttonWithKnownCoef;
     private JPanel mainResualts;
     private JPanel parentCardPanel;
-    private JPanel epsOutputPanel;
-    private JPanel card1CoefficientsPanel;
+    private JPanel cardCoefficientsPanel;
     private JLabel labelArticleCard1;
     private JPanel inputCoefficientsPanelCard1;
     private JPanel chooseMeasurementsCard1;
@@ -39,7 +27,29 @@ public class GUIMainForm extends JFrame {
     private JTextField textField8;
     private JRadioButton одиночныеИзмеренияRadioButton;
     private JRadioButton непрервыныеИзмеренияRadioButton;
-    private JButton начатьButton;
+    private JButton построитьГрафикButton;
+    private JButton buttonInputParametres;
+    private JButton buttonWithUnknownCoef;
+    private JPanel cardParametres;
+    private JPanel inputParametresUART;
+    private JPanel parametresFiltre;
+    private JCheckBox checkBoxA0;
+    private JCheckBox checkBoxA1;
+    private JCheckBox checkBoxA2;
+    private JCheckBox checkBoxA3;
+    private JCheckBox checkBoxA4;
+    private JCheckBox checkBoxA5;
+    private JCheckBox checkBoxA6;
+    private JCheckBox checkBoxA7;
+    private JCheckBox checkBoxA8;
+    private JCheckBox checkBoxA9;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JPanel floatingPanel;
+    private JButton рассчитатьButton;
+    private JTextField textField3;
+    private JTextField textField9;
+    private JTextField textField10;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton noneRadioButton;
     private JButton startButton;
@@ -59,8 +69,8 @@ public class GUIMainForm extends JFrame {
 
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
-        frame.setLocation(700, 350);
-        frame.setPreferredSize(new Dimension(600, 350));
+        frame.setLocation(500, 250);
+        frame.setPreferredSize(new Dimension(1000, 600));
         frame.setContentPane(new GUIMainForm().mainPanel);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
@@ -115,110 +125,129 @@ public class GUIMainForm extends JFrame {
     }
 
     public GUIMainForm() {
-        button1.addActionListener(e -> {
-            fc.setDialogTitle("Выбор текстового файла");
-            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            result = fc.showOpenDialog(GUIMainForm.this);
-        });
+//        buttonSendParameters.addActionListener(e -> {
+//            fc.setDialogTitle("Выбор текстового файла");
+//            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+//            result = fc.showOpenDialog(GUIMainForm.this);
+//        });
+//
+//
+//        buttonSendParameters.addChangeListener(new ChangeListener() {
+//            @Override
+//            public void stateChanged(ChangeEvent e) {
+//                if (result == JFileChooser.APPROVE_OPTION) {
+//                    textParametresFreq1.setText(fc.getName(fc.getSelectedFile()));
+//                    strFormatFile = String.valueOf(fc.getSelectedFile());
+//                }
+//            }
+//        });
+//
+//        startButton.addActionListener(e -> {
+//
+//            OutDoubleArray outDoubleArray = new OutDoubleArray();
+//            outDoubleArray.printDoubleFileArray(strFormatFile);
+//
+//            if (mainThread != null) {
+//                mainThread.start();
+//                bandPassChebyshevRadioButton.setSelected(false);
+//                noneRadioButton.setSelected(true);
+//                noneRadioButton.setSelected(false);
+//                bandPassChebyshevRadioButton.setSelected(true);
+////                noneRadioButton.setEnabled(false);
+////                bandPassChebyshevRadioButton.setEnabled(false);
+////                startButton.setEnabled(false);
+//
+//            }
+//        });
+//
+//        bandPassChebyshevRadioButton.addItemListener(new ItemListener() {
+//
+//            @Override
+//            public void itemStateChanged(ItemEvent e) {
+//
+//                try {
+//                    Thread.sleep(100);
+//                } catch (InterruptedException ex) {
+//                    throw new RuntimeException(ex);
+//                }
+//                mainThread = new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        plotGraph.signalPlot(strFormatFile, true);
+//                    }
+//                });
+//            }
+//
+//        });
+//
+//        noneRadioButton.addItemListener(new ItemListener() {
+//            @Override
+//            public void itemStateChanged(ItemEvent e) {
+//                chooseParametersFilter.setVisible(false);
+//                try {
+//                    Thread.sleep(100);
+//                } catch (InterruptedException ex) {
+//                    throw new RuntimeException(ex);
+//                }
+//
+//                mainThread = new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        plotGraph.signalPlot(strFormatFile, false);
+//                    }
+//                });
+//            }
+//        });
+//        chooseParametersFilter.setVisible(false);
+//        bandPassChebyshevRadioButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                chooseParametersFilter.setVisible(true);
+//            }
+//
+//        });
+//
+//        sliderFrequency.addChangeListener(new ChangeListener() {
+//            @Override
+//            public void stateChanged(ChangeEvent e) {
+//                int sliderFrequencyValue = sliderFrequency.getValue();
+//                plotGraph.setFs(sliderFrequencyValue);
+//                labelFreq.setText("Frequency : " + sliderFrequencyValue);
+//            }
+//        });
+//        sliderLower.addChangeListener(new ChangeListener() {
+//            @Override
+//            public void stateChanged(ChangeEvent e) {
+//                int sliderLowerValue = sliderLower.getValue();
+//                plotGraph.setLowCutOff(sliderLowerValue);
+//                labelLower.setText("Lower cut freq : " + sliderLowerValue);
+//            }
+//        });
+//        sliderHigher.addChangeListener(new ChangeListener() {
+//            @Override
+//            public void stateChanged(ChangeEvent e) {
+//                int sliderHigherValue = sliderHigher.getValue();
+//                plotGraph.setHighCutOff(sliderHigherValue);
+//                labelHigher.setText("Higher cut freq : " + sliderHigherValue);
+//            }
+//        });
 
-
-        button1.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                if (result == JFileChooser.APPROVE_OPTION) {
-                    textParametresFreq1.setText(fc.getName(fc.getSelectedFile()));
-                    strFormatFile = String.valueOf(fc.getSelectedFile());
-                }
-            }
-        });
-
-        startButton.addActionListener(e -> {
-
-            OutDoubleArray outDoubleArray = new OutDoubleArray();
-            outDoubleArray.printDoubleFileArray(strFormatFile);
-
-            if (mainThread != null) {
-                mainThread.start();
-                bandPassChebyshevRadioButton.setSelected(false);
-                noneRadioButton.setSelected(true);
-                noneRadioButton.setSelected(false);
-                bandPassChebyshevRadioButton.setSelected(true);
-//                noneRadioButton.setEnabled(false);
-//                bandPassChebyshevRadioButton.setEnabled(false);
-//                startButton.setEnabled(false);
-
-            }
-        });
-
-        bandPassChebyshevRadioButton.addItemListener(new ItemListener() {
-
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }
-                mainThread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        plotGraph.signalPlot(strFormatFile, true);
-                    }
-                });
-            }
-
-        });
-
-        noneRadioButton.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                chooseParametersFilter.setVisible(false);
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }
-
-                mainThread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        plotGraph.signalPlot(strFormatFile, false);
-                    }
-                });
-            }
-        });
-        chooseParametersFilter.setVisible(false);
-        bandPassChebyshevRadioButton.addActionListener(new ActionListener() {
+        buttonInputParametres.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                chooseParametersFilter.setVisible(true);
-            }
-
-        });
-
-        sliderFrequency.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                int sliderFrequencyValue = sliderFrequency.getValue();
-                plotGraph.setFs(sliderFrequencyValue);
-                labelFreq.setText("Frequency : " + sliderFrequencyValue);
+                parentCardPanel.removeAll();
+                parentCardPanel.add(cardParametres);
+                parentCardPanel.repaint();
+                parentCardPanel.revalidate();
             }
         });
-        sliderLower.addChangeListener(new ChangeListener() {
+        buttonWithUnknownCoef.addActionListener(new ActionListener() {
             @Override
-            public void stateChanged(ChangeEvent e) {
-                int sliderLowerValue = sliderLower.getValue();
-                plotGraph.setLowCutOff(sliderLowerValue);
-                labelLower.setText("Lower cut freq : " + sliderLowerValue);
-            }
-        });
-        sliderHigher.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                int sliderHigherValue = sliderHigher.getValue();
-                plotGraph.setHighCutOff(sliderHigherValue);
-                labelHigher.setText("Higher cut freq : " + sliderHigherValue);
+            public void actionPerformed(ActionEvent e) {
+                parentCardPanel.removeAll();
+                parentCardPanel.add(cardCoefficientsPanel);
+                parentCardPanel.repaint();
+                parentCardPanel.revalidate();
             }
         });
     }
