@@ -124,7 +124,7 @@
                 <children>
                   <component id="4e62f" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font name="Arial" size="14" style="1"/>
@@ -146,7 +146,7 @@
                     </constraints>
                     <properties>
                       <focusable value="true"/>
-                      <font name="Arial" size="12"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Freq min ="/>
                     </properties>
@@ -156,7 +156,7 @@
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font name="Arial"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Freq max ="/>
                     </properties>
@@ -166,7 +166,7 @@
                       <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font name="Arial"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="delFreq = "/>
                     </properties>
@@ -248,7 +248,7 @@
                     </constraints>
                     <properties>
                       <background color="-4473925"/>
-                      <font name="Arial" size="12"/>
+                      <font name="Arial" size="13"/>
                       <foreground color="-16777216"/>
                       <text value="Отправить параметры"/>
                     </properties>
@@ -266,6 +266,7 @@
                     </constraints>
                     <properties>
                       <background color="-1"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <model>
                         <item value="kHz"/>
@@ -280,6 +281,7 @@
                     </constraints>
                     <properties>
                       <background color="-1"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <model>
                         <item value="kHz"/>
@@ -294,6 +296,7 @@
                     </constraints>
                     <properties>
                       <background color="-1"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <model>
                         <item value="kHz"/>
@@ -318,7 +321,7 @@
                 <children>
                   <component id="77938" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font name="Arial" size="14" style="1"/>
@@ -340,7 +343,7 @@
                     </constraints>
                     <properties>
                       <focusable value="true"/>
-                      <font name="Arial" size="12"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Freq discr ="/>
                     </properties>
@@ -350,7 +353,7 @@
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font name="Arial"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Freq cut lower ="/>
                     </properties>
@@ -360,7 +363,7 @@
                       <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font name="Arial"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Freq cut higher ="/>
                     </properties>
@@ -445,7 +448,7 @@
                       <borderPainted value="true"/>
                       <contentAreaFilled value="true"/>
                       <defaultCapable value="true"/>
-                      <font name="Arial" size="12"/>
+                      <font name="Arial" size="13"/>
                       <foreground color="-16777216"/>
                       <hideActionText value="false"/>
                       <text value="Построить график"/>
@@ -464,6 +467,7 @@
                     </constraints>
                     <properties>
                       <background color="-1"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <model>
                         <item value="kHz"/>
@@ -478,6 +482,7 @@
                     </constraints>
                     <properties>
                       <background color="-1"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <model>
                         <item value="kHz"/>
@@ -492,6 +497,7 @@
                     </constraints>
                     <properties>
                       <background color="-1"/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <model>
                         <item value="kHz"/>
@@ -553,9 +559,9 @@
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a0 ="/>
+                      <text value="a₀ ="/>
                     </properties>
                   </component>
                   <hspacer id="de7f8">
@@ -568,9 +574,9 @@
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a1 ="/>
+                      <text value="a₁ ="/>
                     </properties>
                   </component>
                   <component id="ffb4e" class="javax.swing.JLabel">
@@ -578,9 +584,9 @@
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a2 ="/>
+                      <text value="a₂ ="/>
                     </properties>
                   </component>
                   <component id="282bd" class="javax.swing.JLabel">
@@ -588,9 +594,9 @@
                       <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a3 ="/>
+                      <text value="a₃ ="/>
                     </properties>
                   </component>
                   <component id="38d40" class="javax.swing.JLabel">
@@ -598,9 +604,9 @@
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a4 ="/>
+                      <text value="a₄ ="/>
                     </properties>
                   </component>
                   <component id="e633d" class="javax.swing.JTextField" binding="a0TextField0">
@@ -738,9 +744,9 @@
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a5 ="/>
+                      <text value="a₅ ="/>
                     </properties>
                   </component>
                   <component id="6f8f7" class="javax.swing.JTextField" binding="a5TextField5">
@@ -770,9 +776,9 @@
                       <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a6 ="/>
+                      <text value="a₆ ="/>
                     </properties>
                   </component>
                   <component id="c2e56" class="javax.swing.JTextField" binding="a6TextField6">
@@ -802,9 +808,9 @@
                       <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a7 ="/>
+                      <text value="a₇ ="/>
                     </properties>
                   </component>
                   <component id="4279c" class="javax.swing.JTextField" binding="a7TextField7">
@@ -834,9 +840,9 @@
                       <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a8 ="/>
+                      <text value="a₈ ="/>
                     </properties>
                   </component>
                   <component id="3de6f" class="javax.swing.JTextField" binding="a8TextField8">
@@ -866,7 +872,7 @@
                       <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="const"/>
                     </properties>
@@ -876,9 +882,9 @@
                       <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0"/>
+                      <text value="F₀"/>
                     </properties>
                   </component>
                   <component id="c7e00" class="javax.swing.JLabel">
@@ -886,7 +892,7 @@
                       <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Q"/>
                     </properties>
@@ -896,9 +902,9 @@
                       <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^2"/>
+                      <text value="F₀²"/>
                     </properties>
                   </component>
                   <component id="e4c21" class="javax.swing.JLabel">
@@ -906,9 +912,9 @@
                       <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="Q^2"/>
+                      <text value="Q²"/>
                     </properties>
                   </component>
                   <component id="d4013" class="javax.swing.JLabel">
@@ -916,9 +922,9 @@
                       <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0 * Q"/>
+                      <text value="F₀ * Q"/>
                     </properties>
                   </component>
                   <component id="849c3" class="javax.swing.JLabel">
@@ -926,9 +932,9 @@
                       <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^3"/>
+                      <text value="F₀³"/>
                     </properties>
                   </component>
                   <component id="92ac" class="javax.swing.JLabel">
@@ -936,9 +942,9 @@
                       <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="Q^3"/>
+                      <text value="Q³"/>
                     </properties>
                   </component>
                   <component id="f6ed9" class="javax.swing.JLabel">
@@ -946,9 +952,9 @@
                       <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^2 * Q"/>
+                      <text value="F₀² * Q"/>
                     </properties>
                   </component>
                   <component id="bc7fa" class="javax.swing.JLabel">
@@ -956,9 +962,9 @@
                       <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a9 ="/>
+                      <text value="a₉ ="/>
                     </properties>
                   </component>
                   <component id="d301e" class="javax.swing.JTextField" binding="a9TextField9">
@@ -988,21 +994,21 @@
                       <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0 * Q^2     "/>
+                      <text value="F₀ * Q²     "/>
                     </properties>
                   </component>
                 </children>
               </grid>
               <component id="c5d20" class="javax.swing.JLabel" binding="labelArticleCard1">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="12" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="5" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Arial" size="14" style="1"/>
                   <foreground color="-16777216"/>
-                  <text value="Выберите и введите коэффициенты для нахождения E' и E''"/>
+                  <text value="Выберите и введите коэффициенты для нахождения ε' и ε''"/>
                 </properties>
               </component>
               <grid id="3ec8b" binding="chooseMeasurementsCard1" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -1023,7 +1029,7 @@
                     </constraints>
                     <properties>
                       <background color="-2171170"/>
-                      <font/>
+                      <font name="Arial" size="14" style="1"/>
                       <foreground color="-16777216"/>
                       <text value="Одиночные измерения"/>
                     </properties>
@@ -1034,7 +1040,7 @@
                     </constraints>
                     <properties>
                       <background color="-2171170"/>
-                      <font/>
+                      <font name="Arial" size="14" style="1"/>
                       <foreground color="-16777216"/>
                       <text value="Непрервыные измерения"/>
                     </properties>
@@ -1046,7 +1052,7 @@
                     </constraints>
                     <properties>
                       <background color="-2171170"/>
-                      <visible value="false"/>
+                      <visible value="true"/>
                     </properties>
                     <border type="none"/>
                     <children>
@@ -1076,7 +1082,7 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <font/>
+                          <font name="Arial" size="14" style="0"/>
                           <foreground color="-16777216"/>
                           <text value="tmax = "/>
                         </properties>
@@ -1086,7 +1092,7 @@
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <font/>
+                          <font name="Arial" size="14" style="0"/>
                           <foreground color="-16777216"/>
                           <text value="tau = "/>
                         </properties>
@@ -1103,7 +1109,7 @@
                           <model>
                             <item value="c"/>
                             <item value="mc"/>
-                            <item value="mkc"/>
+                            <item value="μc"/>
                           </model>
                         </properties>
                       </component>
@@ -1119,7 +1125,7 @@
                           <model>
                             <item value="c"/>
                             <item value="mc"/>
-                            <item value="mkc"/>
+                            <item value="μc"/>
                           </model>
                         </properties>
                       </component>
@@ -1142,7 +1148,7 @@
                       <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="1"/>
                       <foreground color="-16777216"/>
                       <text value="На частоте fср = "/>
                     </properties>
@@ -1152,7 +1158,7 @@
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="ε' ="/>
                     </properties>
@@ -1162,7 +1168,7 @@
                       <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="ε'' ="/>
                     </properties>
@@ -1259,6 +1265,7 @@
                           <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Arial" size="14" style="1"/>
                           <foreground color="-16777216"/>
                           <text value="На частоте fср = "/>
                         </properties>
@@ -1268,8 +1275,9 @@
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Arial" size="14" style="0"/>
                           <foreground color="-16777216"/>
-                          <text value=""/>
+                          <text value="ε'"/>
                         </properties>
                       </component>
                       <component id="11506" class="javax.swing.JTextField" binding="textField12" default-binding="true">
@@ -1298,6 +1306,7 @@
                           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Arial" size="14" style="0"/>
                           <foreground color="-16777216"/>
                           <text value="ε'' ="/>
                         </properties>
@@ -1334,7 +1343,7 @@
                           <background color="-2171170"/>
                           <disabledTextColor color="-16777216"/>
                           <enabled value="false"/>
-                          <font style="1"/>
+                          <font name="Arial" size="14" style="1"/>
                           <foreground color="-16777216"/>
                           <text value="Количество кол-ых&#10;образцов: "/>
                         </properties>
@@ -1359,7 +1368,7 @@
                         </constraints>
                         <properties>
                           <background color="-2171170"/>
-                          <font/>
+                          <font name="Arial" size="14" style="1"/>
                           <foreground color="-16777216"/>
                           <text value="Одиночные измерения"/>
                         </properties>
@@ -1370,7 +1379,7 @@
                         </constraints>
                         <properties>
                           <background color="-2171170"/>
-                          <font/>
+                          <font name="Arial" size="14" style="1"/>
                           <foreground color="-16777216"/>
                           <text value="Непрервыные измерения"/>
                         </properties>
@@ -1437,7 +1446,7 @@
                               <model>
                                 <item value="c"/>
                                 <item value="mc"/>
-                                <item value="mkc"/>
+                                <item value="μc"/>
                               </model>
                             </properties>
                           </component>
@@ -1451,7 +1460,7 @@
                               <model>
                                 <item value="c"/>
                                 <item value="mc"/>
-                                <item value="mkc"/>
+                                <item value="μc"/>
                               </model>
                             </properties>
                           </component>
@@ -1478,9 +1487,9 @@
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a0 ="/>
+                      <text value="a₀ ="/>
                     </properties>
                   </component>
                   <hspacer id="73b9e">
@@ -1493,9 +1502,9 @@
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a1 ="/>
+                      <text value="a₁ ="/>
                     </properties>
                   </component>
                   <component id="73362" class="javax.swing.JLabel">
@@ -1503,9 +1512,9 @@
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a2 ="/>
+                      <text value="a₂ ="/>
                     </properties>
                   </component>
                   <component id="f2165" class="javax.swing.JLabel">
@@ -1513,9 +1522,9 @@
                       <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a3 ="/>
+                      <text value="a₃ ="/>
                     </properties>
                   </component>
                   <component id="8fd16" class="javax.swing.JLabel">
@@ -1523,9 +1532,9 @@
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a4 ="/>
+                      <text value="a₄ ="/>
                     </properties>
                   </component>
                   <component id="b225" class="javax.swing.JTextField" binding="outputCoefA0">
@@ -1668,9 +1677,9 @@
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a5 ="/>
+                      <text value="a₅ ="/>
                     </properties>
                   </component>
                   <component id="15762" class="javax.swing.JTextField" binding="outputCoefA5">
@@ -1701,9 +1710,9 @@
                       <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a6 ="/>
+                      <text value="a₆ ="/>
                     </properties>
                   </component>
                   <component id="f2528" class="javax.swing.JTextField" binding="outputCoefA6">
@@ -1734,9 +1743,9 @@
                       <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a7 ="/>
+                      <text value="a₇ ="/>
                     </properties>
                   </component>
                   <component id="88036" class="javax.swing.JTextField" binding="outputCoefA7">
@@ -1767,9 +1776,9 @@
                       <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a8 ="/>
+                      <text value="a₈ ="/>
                     </properties>
                   </component>
                   <component id="35472" class="javax.swing.JTextField" binding="outputCoefA8">
@@ -1800,7 +1809,7 @@
                       <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="const"/>
                     </properties>
@@ -1810,7 +1819,7 @@
                       <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="F0"/>
                     </properties>
@@ -1820,7 +1829,7 @@
                       <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Q"/>
                     </properties>
@@ -1830,9 +1839,9 @@
                       <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^2"/>
+                      <text value="F0²"/>
                     </properties>
                   </component>
                   <component id="e23df" class="javax.swing.JLabel">
@@ -1840,9 +1849,9 @@
                       <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="Q^2"/>
+                      <text value="Q²"/>
                     </properties>
                   </component>
                   <component id="e1cfb" class="javax.swing.JLabel">
@@ -1850,7 +1859,7 @@
                       <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="F0 * Q"/>
                     </properties>
@@ -1860,9 +1869,9 @@
                       <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^3"/>
+                      <text value="F0³"/>
                     </properties>
                   </component>
                   <component id="185bb" class="javax.swing.JLabel">
@@ -1870,9 +1879,9 @@
                       <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="Q^3"/>
+                      <text value="Q³"/>
                     </properties>
                   </component>
                   <component id="fd1b7" class="javax.swing.JLabel">
@@ -1880,9 +1889,9 @@
                       <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^2 * Q"/>
+                      <text value="F0² * Q"/>
                     </properties>
                   </component>
                   <component id="6c66c" class="javax.swing.JLabel">
@@ -1890,9 +1899,9 @@
                       <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a9 ="/>
+                      <text value="a₉ ="/>
                     </properties>
                   </component>
                   <component id="99f46" class="javax.swing.JTextField" binding="outputCoefA9">
@@ -1923,9 +1932,9 @@
                       <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0 * Q^2     "/>
+                      <text value="F0 * Q²     "/>
                     </properties>
                   </component>
                 </children>
@@ -1938,7 +1947,7 @@
                   <background color="-2171170"/>
                   <font name="Arial" size="14" style="1"/>
                   <foreground color="-16777216"/>
-                  <text value="Выберите коэффициенты для рассчета для E' и E'': "/>
+                  <text value="Выберите коэффициенты для рассчета для ε' и ε'': "/>
                 </properties>
               </component>
               <grid id="35a0e" layout-manager="GridLayoutManager" row-count="10" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -1958,9 +1967,9 @@
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a0 ="/>
+                      <text value="a₀ ="/>
                     </properties>
                   </component>
                   <hspacer id="40b52">
@@ -1973,9 +1982,9 @@
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a1 ="/>
+                      <text value="a₁ ="/>
                     </properties>
                   </component>
                   <component id="f2ddd" class="javax.swing.JLabel">
@@ -1983,9 +1992,9 @@
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a2 ="/>
+                      <text value="a₂ ="/>
                     </properties>
                   </component>
                   <component id="fba54" class="javax.swing.JLabel">
@@ -1993,9 +2002,9 @@
                       <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a3 ="/>
+                      <text value="a₃ ="/>
                     </properties>
                   </component>
                   <component id="41e44" class="javax.swing.JLabel">
@@ -2003,9 +2012,9 @@
                       <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a4 ="/>
+                      <text value="a₄ ="/>
                     </properties>
                   </component>
                   <component id="6048a" class="javax.swing.JTextField">
@@ -2148,9 +2157,9 @@
                       <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a5 ="/>
+                      <text value="a₅ ="/>
                     </properties>
                   </component>
                   <component id="c0e34" class="javax.swing.JTextField">
@@ -2181,9 +2190,9 @@
                       <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a6 ="/>
+                      <text value="a₆ ="/>
                     </properties>
                   </component>
                   <component id="26920" class="javax.swing.JTextField">
@@ -2214,9 +2223,9 @@
                       <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a7 ="/>
+                      <text value="a₇ ="/>
                     </properties>
                   </component>
                   <component id="a35a8" class="javax.swing.JTextField">
@@ -2247,9 +2256,9 @@
                       <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a8 ="/>
+                      <text value="a₈ ="/>
                     </properties>
                   </component>
                   <component id="779b4" class="javax.swing.JTextField">
@@ -2280,7 +2289,7 @@
                       <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="const"/>
                     </properties>
@@ -2290,7 +2299,7 @@
                       <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="F0"/>
                     </properties>
@@ -2300,7 +2309,7 @@
                       <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="Q"/>
                     </properties>
@@ -2310,9 +2319,9 @@
                       <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^2"/>
+                      <text value="F0²"/>
                     </properties>
                   </component>
                   <component id="b913" class="javax.swing.JLabel">
@@ -2320,9 +2329,9 @@
                       <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="Q^2"/>
+                      <text value="Q²"/>
                     </properties>
                   </component>
                   <component id="a64e" class="javax.swing.JLabel">
@@ -2330,7 +2339,7 @@
                       <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
                       <text value="F0 * Q"/>
                     </properties>
@@ -2340,9 +2349,9 @@
                       <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^3"/>
+                      <text value="F0³"/>
                     </properties>
                   </component>
                   <component id="985f" class="javax.swing.JLabel">
@@ -2350,9 +2359,9 @@
                       <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="Q^3"/>
+                      <text value="Q³"/>
                     </properties>
                   </component>
                   <component id="f5b8" class="javax.swing.JLabel">
@@ -2360,9 +2369,9 @@
                       <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0^2 * Q"/>
+                      <text value="F0² * Q"/>
                     </properties>
                   </component>
                   <component id="b99d7" class="javax.swing.JLabel">
@@ -2370,9 +2379,9 @@
                       <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="a9 ="/>
+                      <text value="a₉ ="/>
                     </properties>
                   </component>
                   <component id="5f788" class="javax.swing.JTextField">
@@ -2403,9 +2412,9 @@
                       <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font/>
+                      <font name="Arial" size="14" style="0"/>
                       <foreground color="-16777216"/>
-                      <text value="F0 * Q^2     "/>
+                      <text value="F0 * Q²     "/>
                     </properties>
                   </component>
                 </children>

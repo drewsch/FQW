@@ -136,7 +136,6 @@ public class GUIMainForm extends JFrame {
     private int GHz = (int) Math.pow(10, 9);
     private int MGz = (int) Math.pow(10, 6);
 
-
     public void mainGUI() {
         JFrame frame = new JFrame("Microwave sensors(resonant)");
         frame.setLocation(500, 250);
@@ -199,8 +198,7 @@ public class GUIMainForm extends JFrame {
         parametersFilter.setVisible(false);
         buttonWithUnknownCoef.setEnabled(false);
         buttonWithKnownCoef.setEnabled(false);
-        label1Card2.setText("ε");
-        System.out.println("₁");
+
         /** код для чтения выбранного файла
          buttonSendParameters.addActionListener(e -> {
          fc.setDialogTitle("Выбор текстового файла");
@@ -393,9 +391,12 @@ public class GUIMainForm extends JFrame {
         buttonPlotGraph.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 plotGraph.setFs(slider4FreqDiscr.getValue() * returnPow(comboBox4));
-                plotGraph.setHighCutOff(sliderFreqHigher.getValue() * returnPow(comboBox5));
-                plotGraph.setLowCutOff(sliderFreqLower.getValue() * returnPow(comboBox6));
+                plotGraph.setLowCutOff(sliderFreqLower.getValue() * returnPow(comboBox5));
+                plotGraph.setHighCutOff(sliderFreqHigher.getValue() * returnPow(comboBox6));
+                System.out.println(sliderFreqLower.getValue() * returnPow(comboBox5));
+                System.out.println(sliderFreqHigher.getValue() * returnPow(comboBox6));
 
                 try {
                     Thread.sleep(100);
@@ -585,7 +586,7 @@ public class GUIMainForm extends JFrame {
     private int returnPow(JComboBox comboBox) {
         if (comboBox.getSelectedIndex() == 0) {
             return kHz;
-        } else if (comboBox1.getSelectedIndex() == 1) {
+        } else if (comboBox.getSelectedIndex() == 1) {
             return MGz;
         } else {
             return GHz;
