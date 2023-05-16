@@ -99,7 +99,7 @@
             <properties>
               <background color="-1"/>
               <requestFocusEnabled value="true"/>
-              <visible value="true"/>
+              <visible value="false"/>
             </properties>
             <border type="none"/>
             <children>
@@ -512,7 +512,7 @@
                       <text value="a4 ="/>
                     </properties>
                   </component>
-                  <component id="e633d" class="javax.swing.JTextField" binding="a0TextField4" default-binding="true">
+                  <component id="e633d" class="javax.swing.JTextField" binding="a0TextField0">
                     <constraints>
                       <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -525,7 +525,7 @@
                       <text value="0"/>
                     </properties>
                   </component>
-                  <component id="8bdd3" class="javax.swing.JTextField" binding="a0TextField3" default-binding="true">
+                  <component id="8bdd3" class="javax.swing.JTextField" binding="a1TextField1">
                     <constraints>
                       <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -538,7 +538,7 @@
                       <text value="0"/>
                     </properties>
                   </component>
-                  <component id="930e9" class="javax.swing.JTextField" binding="a0TextField2" default-binding="true">
+                  <component id="930e9" class="javax.swing.JTextField" binding="a2TextField2">
                     <constraints>
                       <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -551,7 +551,7 @@
                       <text value="0"/>
                     </properties>
                   </component>
-                  <component id="2735c" class="javax.swing.JTextField" binding="a0TextField1" default-binding="true">
+                  <component id="2735c" class="javax.swing.JTextField" binding="a3TextField3">
                     <constraints>
                       <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -564,7 +564,7 @@
                       <text value="0"/>
                     </properties>
                   </component>
-                  <component id="20996" class="javax.swing.JTextField" binding="a0TextField" default-binding="true">
+                  <component id="20996" class="javax.swing.JTextField" binding="a4TextField4">
                     <constraints>
                       <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -652,7 +652,7 @@
                       <text value="a5 ="/>
                     </properties>
                   </component>
-                  <component id="6f8f7" class="javax.swing.JTextField" default-binding="true">
+                  <component id="6f8f7" class="javax.swing.JTextField" binding="a5TextField5">
                     <constraints>
                       <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -684,7 +684,7 @@
                       <text value="a6 ="/>
                     </properties>
                   </component>
-                  <component id="c2e56" class="javax.swing.JTextField" default-binding="true">
+                  <component id="c2e56" class="javax.swing.JTextField" binding="a6TextField6">
                     <constraints>
                       <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -716,7 +716,7 @@
                       <text value="a7 ="/>
                     </properties>
                   </component>
-                  <component id="4279c" class="javax.swing.JTextField" default-binding="true">
+                  <component id="4279c" class="javax.swing.JTextField" binding="a7TextField7">
                     <constraints>
                       <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -748,7 +748,7 @@
                       <text value="a8 ="/>
                     </properties>
                   </component>
-                  <component id="3de6f" class="javax.swing.JTextField" default-binding="true">
+                  <component id="3de6f" class="javax.swing.JTextField" binding="a8TextField8">
                     <constraints>
                       <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -870,7 +870,7 @@
                       <text value="a9 ="/>
                     </properties>
                   </component>
-                  <component id="d301e" class="javax.swing.JTextField" default-binding="true">
+                  <component id="d301e" class="javax.swing.JTextField" binding="a9TextField9">
                     <constraints>
                       <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="60" height="23"/>
@@ -926,7 +926,7 @@
                 </properties>
                 <border type="etched"/>
                 <children>
-                  <component id="1ac4a" class="javax.swing.JRadioButton" binding="одиночныеИзмеренияRadioButton" default-binding="true">
+                  <component id="1ac4a" class="javax.swing.JRadioButton" binding="buttonUnCountinueMeas">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -937,7 +937,7 @@
                       <text value="Одиночные измерения"/>
                     </properties>
                   </component>
-                  <component id="2888b" class="javax.swing.JRadioButton" binding="непрервыныеИзмеренияRadioButton" default-binding="true">
+                  <component id="2888b" class="javax.swing.JRadioButton" binding="buttonContinueMeas">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>

@@ -23,13 +23,13 @@ public class GUIMainForm extends JFrame {
     private JLabel labelArticleCard1;
     private JPanel inputCoefficientsPanelCard1;
     private JPanel chooseMeasurementsCard1;
-    private JTextField a0TextField4;
-    private JTextField a0TextField3;
-    private JTextField a0TextField2;
-    private JTextField a0TextField1;
-    private JTextField a0TextField;
-    private JRadioButton одиночныеИзмеренияRadioButton;
-    private JRadioButton непрервыныеИзмеренияRadioButton;
+    private JTextField a0TextField0;
+    private JTextField a1TextField1;
+    private JTextField a2TextField2;
+    private JTextField a3TextField3;
+    private JTextField a4TextField4;
+    private JRadioButton buttonUnCountinueMeas;
+    private JRadioButton buttonContinueMeas;
     private JButton buttonPlotGraph;
     private JButton buttonInputParameters;
     private JButton buttonWithKnownCoef;
@@ -99,6 +99,11 @@ public class GUIMainForm extends JFrame {
     private JTextField freqDiscrQuantity;
     private JTextField freqLowerQuantity;
     private JTextField freqHigherQuantity;
+    private JTextField a5TextField5;
+    private JTextField a6TextField6;
+    private JTextField a7TextField7;
+    private JTextField a8TextField8;
+    private JTextField a9TextField9;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton noneRadioButton;
     private JButton startButton;
@@ -325,7 +330,6 @@ public class GUIMainForm extends JFrame {
                 parametersFilter.setVisible(true);
                 buttonWithKnownCoef.setEnabled(true);
                 buttonWithUnknownCoef.setEnabled(true);
-
                 //отправка параметров по sendUart
                 //и ожидание чтения Uart Reader
             }
@@ -377,9 +381,7 @@ public class GUIMainForm extends JFrame {
                 plotGraph.setFs(slider4FreqDiscr.getValue());
                 plotGraph.setHighCutOff(sliderFreqHigher.getValue());
                 plotGraph.setLowCutOff(sliderFreqLower.getValue());
-                if (mainThread != null){
-                    mainThread.start();
-                }
+
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException ex) {
@@ -391,8 +393,96 @@ public class GUIMainForm extends JFrame {
                         plotGraph.signalPlot(strFormatFile, true);
                     }
                 });
+                mainThread.start();
             }
         });
+
+        /**
+         * function card1
+         */
+        setParametersCard1();
+        checkBoxA0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a0TextField0.setEnabled(checkBoxA0.isSelected());
+            }
+        });
+        checkBoxA1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a1TextField1.setEnabled(checkBoxA1.isSelected());
+            }
+        });
+        checkBoxA2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a2TextField2.setEnabled(checkBoxA2.isSelected());
+            }
+        });
+        checkBoxA3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a3TextField3.setEnabled(checkBoxA3.isSelected());
+            }
+        });
+        checkBoxA4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a4TextField4.setEnabled(checkBoxA4.isSelected());
+            }
+        });
+        checkBoxA5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a5TextField5.setEnabled(checkBoxA5.isSelected());
+            }
+        });
+        checkBoxA6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a6TextField6.setEnabled(checkBoxA6.isSelected());
+            }
+        });
+        checkBoxA7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a7TextField7.setEnabled(checkBoxA7.isSelected());
+            }
+        });
+        checkBoxA8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a8TextField8.setEnabled(checkBoxA8.isSelected());
+            }
+        });
+        checkBoxA9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a9TextField9.setEnabled(checkBoxA9.isSelected());
+            }
+        });
+
+        buttonContinueMeas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                floatingPanel.setVisible(buttonContinueMeas.isSelected());
+            }
+        });
+    }
+
+    private void setParametersCard1() {
+        a0TextField0.setEnabled(false);
+        a1TextField1.setEnabled(false);
+        a2TextField2.setEnabled(false);
+        a3TextField3.setEnabled(false);
+        a4TextField4.setEnabled(false);
+        a5TextField5.setEnabled(false);
+        a6TextField6.setEnabled(false);
+        a7TextField7.setEnabled(false);
+        a8TextField8.setEnabled(false);
+        a9TextField9.setEnabled(false);
+        floatingPanel.setVisible(false);
+
     }
 
 }
