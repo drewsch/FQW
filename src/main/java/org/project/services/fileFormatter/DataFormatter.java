@@ -1,15 +1,18 @@
 package org.project.services.fileFormatter;
 
+import org.project.services.IRealizationGetData.IRealizationData;
+
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 
-public class DataFormatter {
+public class DataFormatter implements IRealizationData {
     public double[][] format(String filePath) throws IOException {
-        return readFile(filePath);
+        return readData(filePath);
     }
-    private double[][] readFile(String filePath) throws IOException {
+    public double[][] readData(String filePath) throws IOException {
         BufferedReader reader;
         reader = new BufferedReader(new FileReader(filePath));
         String line = reader.readLine();
@@ -27,4 +30,5 @@ public class DataFormatter {
 
         return ArrayFile;
     }
+
 }
