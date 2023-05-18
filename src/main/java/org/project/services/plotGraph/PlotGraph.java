@@ -15,7 +15,7 @@ public class PlotGraph {
 
     private int highCutOff = 50; //Higher Cut-off Frequency
     private double freqQuantity;
-    private double delF = 3;
+    private double delF = 1;
     private double[][] arrayFreqAmpl;
     private int fmax = 12;
     private int fmin = 3;
@@ -35,7 +35,7 @@ public class PlotGraph {
         int width = 1400;
         int height = 800;
         String title = "Sample Figure";
-        String x_axis = "Time";
+        String x_axis = "Frequency";
         String y_axis = "Signal";
         fig = new Plotting(width, height, title, x_axis, y_axis);
         fig.initialisePlot();
