@@ -24,7 +24,7 @@ public class PlotRealTimeNew {
     public static PlotRealTimeNew instance(Container frame) {
         double[] data = PlotRealTimeNew.fetchData(frame);
 
-        double[][] initData = new double[][]{data, new double[]{123.123, 123.321}}; //TODO вместо хардкода добавить время
+        double[][] initData = new double[][]{data, new double[]{(double) System.currentTimeMillis()}}; //TODO вместо хардкода добавить время
 
         final XYChart chart = QuickChart.getChart("Simple XChart Real-time Demo", "Radians", "Sine", "sine", initData[0], initData[1]);
 
@@ -47,7 +47,7 @@ public class PlotRealTimeNew {
         //TODO соедиение массива со старым состоянием графика
         Thread.sleep(1000);
 
-        final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{321.123, 123.321}}; //TODO вместо хардкода добавить время
+        final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{(double) System.currentTimeMillis()}}; //TODO вместо хардкода добавить время
         this.state = data; // не перезаписывать, а менять (добавлять в конец)
         if (true) { //TODO если данные не 0.0, 0.0
             javax.swing.SwingUtilities.invokeLater(new Runnable() {

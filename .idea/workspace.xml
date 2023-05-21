@@ -302,7 +302,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684702876805</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test real time plot retrieve - fix">
+      <created>1684703483070</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684703483070</updated>
+    </task>
+    <task id="LOCAL-00017" summary="test real time plot retrieve - fix">
+      <created>1684703527508</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684703527508</updated>
+    </task>
+    <task id="LOCAL-00018" summary="test real time plot retrieve - fix">
+      <created>1684703649564</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684703649564</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
