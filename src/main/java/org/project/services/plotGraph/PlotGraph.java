@@ -1,7 +1,6 @@
 package org.project.services.plotGraph;
 
 import com.github.psambit9791.jdsp.filter.Butterworth;
-import com.github.psambit9791.jdsp.filter.Chebyshev;
 import com.github.psambit9791.jdsp.misc.Plotting;
 import org.project.services.fileFormatter.DataFormatter;
 
@@ -31,6 +30,7 @@ public class PlotGraph {
     public void setHighCutOff(int highCutOff) {
         this.highCutOff = highCutOff;
     }
+
     private void parametersGraph() {
         int width = 1400;
         int height = 800;
@@ -41,22 +41,41 @@ public class PlotGraph {
         fig.initialisePlot();
         fig.addStylerCursor();
     }
+
     private void signalButterworthBandPassPlot(double[][] arrayFromDataFormatter) {
+        System.out.println(arrayFromDataFormatter.length);
         arrayFreqAmpl = new double[2][arrayFromDataFormatter.length - 1];
         Butterworth butterworth = new Butterworth(fs);
         int order = 4; //order of the filter
 
-        for (int i = 0; i < arrayFromDataFormatter.length -1; i++ ){
-            double[] amplitude = butterworth.bandPassFilter(arrayFromDataFormatter[i], order, lowCutOff, highCutOff);
-            arrayFreqAmpl[0][i] = setAmplitude(amplitude);
-        }
+//        for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
+//            double[] amplitude = butterworth.bandPassFilter(arrayFromDataFormatter[i], order, lowCutOff, highCutOff);
+//            arrayFreqAmpl[0][i] = setAmplitude(amplitude);
+//        }
 
         for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
             arrayFreqAmpl[1][i] = fmin + i * delF;
         }
 
-        fig.addSignal("Signal before ", arrayFreqAmpl[1], arrayFreqAmpl[0], false);
-        fig.plot();
+        /**
+         * testSignal
+         */
+        double[] unFiltersAmplitude = new double[arrayFromDataFormatter.length - 1];
+        for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
+            double[] amplitude = arrayFromDataFormatter[i];
+            unFiltersAmplitude[i] = setAmplitude(amplitude);
+
+        }
+        double[] amplitude = butterworth.bandPassFilter(unFiltersAmplitude, order, lowCutOff, highCutOff);
+        //fig.addSignal("Signal", arrayFreqAmpl[1], unFiltersAmplitude, false);
+
+        fig.addSignal("Signal2", arrayFreqAmpl[1], amplitude, false);
+
+            fig.plot();
+
+
+
+
     }
 
     private double setAmplitude(double[] amplitude) {
@@ -68,13 +87,12 @@ public class PlotGraph {
                 Umin += v;
             }
         }
-        return (Umax/amplitude.length - Umin/amplitude.length) / 2;
+        return (Umax / amplitude.length - Umin / amplitude.length) / 2;
     }
 
     private void signalSimplePlot(double[][] arrayFromDataFormatter) {
-        fig.addSignal("Signal 1" , arrayFromDataFormatter[0], arrayFromDataFormatter[1], false);
+        fig.addSignal("Signal 1", arrayFromDataFormatter[0], arrayFromDataFormatter[1], false);
         fig.plot();
-
     }
 
     public void signalPlot(String strFormatFile, boolean isWithFilter) {

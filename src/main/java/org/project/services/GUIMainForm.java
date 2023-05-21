@@ -5,7 +5,7 @@ package org.project.services;
 
 import org.project.services.ILogicalCalculationsKnownCoeff.ILogicalCalculationsKnownCoeff;
 import org.project.services.UartSender.UartSender;
-import org.project.services.calculationAlgorithmFQ.CalculationAlgorithm;
+import org.project.services.buttonInteraction.ActionCheckBoxesOutputA;
 import org.project.services.calculationLogic.CalculationCard1;
 import org.project.services.calculationLogic.CalculationCard2;
 import org.project.services.plotGraph.PlotGraph;
@@ -15,10 +15,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
@@ -30,7 +26,6 @@ public class GUIMainForm extends JFrame {
     private JPanel cardKnownCoefficientsPanel;
     private JLabel labelArticleCard1;
     private JPanel inputCoefficientsPanelCard1RealE;
-    private JPanel chooseMeasurementsCard1;
     private JTextField a0TextField0;
     private JTextField a1TextField1;
     private JTextField a2TextField2;
@@ -54,8 +49,6 @@ public class GUIMainForm extends JFrame {
     private JCheckBox checkBoxA7;
     private JCheckBox checkBoxA8;
     private JCheckBox checkBoxA9;
-    private JTextField textField1;
-    private JTextField textField2;
     private JPanel floatingPanel;
     private JButton mainButtonCard1;
     private JTextField valueRealEpsCard1;
@@ -90,10 +83,7 @@ public class GUIMainForm extends JFrame {
     private JButton mainButtonCard2;
     private JPanel epsMainUnknownCoefCard2;
     private JPanel epsPanelInputCard2;
-    private JPanel chooseMeasureCard2;
     private JPanel inputMeasureCard2;
-    private JTextField tmaxCard2;
-    private JTextField tauCard2;
     private JLabel label1Card2;
     private JSlider slider1FreqMin;
     private JSlider slider2FreqMax;
@@ -120,10 +110,6 @@ public class GUIMainForm extends JFrame {
     private JComboBox comboBox4;
     private JComboBox comboBox5;
     private JComboBox comboBox6;
-    private JComboBox comboBox7;
-    private JComboBox comboBox8;
-    private JComboBox comboBox9;
-    private JComboBox comboBox10;
     private JTextArea количествоКолЫхОбразцовTextArea;
     private JPanel inputCoefficientsPanelCard1ImpE;
     private JTextField b0TextField0;
@@ -167,6 +153,7 @@ public class GUIMainForm extends JFrame {
     private JCheckBox checkBoxOutB7;
     private JCheckBox checkBoxOutB8;
     private JCheckBox checkBoxOutB9;
+    private JRadioButton turnOnFilters;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton noneRadioButton;
     private JButton startButton;
@@ -395,7 +382,7 @@ public class GUIMainForm extends JFrame {
                 uartSender.setFreqMin(slider1FreqMin.getValue() * returnPow(comboBox1));
                 uartSender.setFreqMax(slider2FreqMax.getValue() * returnPow(comboBox2));
                 uartSender.setDelFreq(slider3DelFreq.getValue() * returnPow(comboBox3));
-                parametersFilter.setVisible(true);
+                turnOnFilters.setEnabled(true);
                 buttonWithKnownCoef.setEnabled(true);
                 buttonWithUnknownCoef.setEnabled(true);
                 // TODO: отправка параметров по sendUart
@@ -450,8 +437,7 @@ public class GUIMainForm extends JFrame {
                 plotGraph.setFs(slider4FreqDiscr.getValue() * returnPow(comboBox4));
                 plotGraph.setLowCutOff(sliderFreqLower.getValue() * returnPow(comboBox5));
                 plotGraph.setHighCutOff(sliderFreqHigher.getValue() * returnPow(comboBox6));
-                System.out.println(sliderFreqLower.getValue() * returnPow(comboBox5));
-                System.out.println(sliderFreqHigher.getValue() * returnPow(comboBox6));
+                System.out.println(slider4FreqDiscr.getValue() * returnPow(comboBox4));
 
                 try {
                     Thread.sleep(100);
@@ -733,18 +719,6 @@ public class GUIMainForm extends JFrame {
         /**
          * -----!function card2!------
          */
-        radioButtonUnCountinueMeasCard2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                inputMeasureCard2.setVisible(false);
-            }
-        });
-        radioButtonContinueMeasCard2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                inputMeasureCard2.setVisible(true);
-            }
-        });
         mainButtonCard2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -767,135 +741,32 @@ public class GUIMainForm extends JFrame {
                 quantitySamples.setEnabled(false);
                 sizeClicker = Integer.parseInt(quantitySamples.getText());
                 checkCase = new int[sizeClicker][10];
+                System.out.println(sizeClicker);
+                System.out.println(quantitySamples.getText());
 
             }
         });
-        checkBoxOutA0.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA0.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA0.isSelected()) {
-                    checkBoxOutA0.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA1.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA1.isSelected()) {
-                    checkBoxOutA1.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA2.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA2.isSelected()) {
-                    checkBoxOutA2.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA3.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA3.isSelected()) {
-                    checkBoxOutA3.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
 
-            }
-        });
-        checkBoxOutA4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA4.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA4.isSelected()) {
-                    checkBoxOutA4.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA5.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA5.isSelected()) {
-                    checkBoxOutA5.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA6.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA6.isSelected()) {
-                    checkBoxOutA6.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA7.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA7.isSelected()) {
-                    checkBoxOutA7.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA8.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA8.isSelected()) {
-                    checkBoxOutA8.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
-            }
-        });
-        checkBoxOutA9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (clickCounter < sizeClicker && checkBoxOutA9.isSelected()) {
-                    clickCounter++;
-                } else if (clickCounter == sizeClicker && checkBoxOutA9.isSelected()) {
-                    checkBoxOutA9.setSelected(false);
-                } else {
-                    clickCounter--;
-                }
+        ActionCheckBoxesOutputA actionCheckBoxesOutputA = new ActionCheckBoxesOutputA(clickCounter, sizeClicker);
+        checkBoxOutA0.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA1.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA2.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA3.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA4.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA5.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA6.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA7.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA8.addActionListener(actionCheckBoxesOutputA);
+        checkBoxOutA9.addActionListener(actionCheckBoxesOutputA);
 
-            }
-        });
-        checkBoxOutB0.addActionListener(new ActionListener() {
+        turnOnFilters.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (turnOnFilters.isSelected()) {
+                    parametersFilter.setVisible(true);
+                } else {
+                    parametersFilter.setVisible(false);
+                }
             }
         });
     }

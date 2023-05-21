@@ -1,8 +1,8 @@
 package org.project.services.calculationAlgorithmFQ;
 
 public class CalculationAlgorithm {
-    private double F0 = 20;
-    private double Q = 4;
+    private double F0 = 1.56 * Math.pow(10,9);
+    private double Q = 86.227;
 
     public double getF0() {
         return F0;

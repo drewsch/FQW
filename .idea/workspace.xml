@@ -9,19 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="add logic">
-      <change afterPath="$PROJECT_DIR$/data2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/ILogicalCalculationsKnownCoeff/ILogicalCalculationsKnownCoeff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/ILogicalCalculationsUnKnownCoeff/ILogicalCalculationsUnKnownCoeff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" afterDir="false" />
+    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="ggoooooooooooooooooood">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesOutputA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/ILogicalCalculations/ILogicalCalculations.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,9 +78,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;136&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;289&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;410&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Андрей/Desktop/FQW/FQW/src/main/java/org/project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Андрей/Desktop/jdsp-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -105,13 +101,26 @@
       <recent name="C:\Users\Андрей\Desktop\FQW\FQW" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.project.Main" />
       <module name="kids_project" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlotRealTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.project.services.plotGraph.PlotRealTime" />
+      <module name="kids_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.project.services.plotGraph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,7 +142,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.PlotRealTime" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -189,7 +198,9 @@
       <workItem from="1684439114693" duration="53000" />
       <workItem from="1684439180419" duration="162000" />
       <workItem from="1684439353460" duration="4758000" />
-      <workItem from="1684444132815" duration="4928000" />
+      <workItem from="1684444132815" duration="5314000" />
+      <workItem from="1684481541455" duration="17976000" />
+      <workItem from="1684693875863" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="test reading complete">
       <created>1679256344480</created>
@@ -268,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684267819372</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ggoooooooooooooooooood">
+      <created>1684449195207</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684449195207</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +312,7 @@
     <MESSAGE value="fix multithreading and add cursor, zoom" />
     <MESSAGE value="add jar" />
     <MESSAGE value="add logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="add logic" />
+    <MESSAGE value="ggoooooooooooooooooood" />
+    <option name="LAST_COMMIT_MESSAGE" value="ggoooooooooooooooooood" />
   </component>
 </project>

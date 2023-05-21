@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="0" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="1125" height="567"/>
+      <xy x="20" y="20" width="1125" height="623"/>
     </constraints>
     <properties>
       <background color="-1"/>
@@ -16,7 +16,7 @@
       <color color="-4473925"/>
     </border>
     <children>
-      <grid id="8935e" binding="panelButtonChoosesCards" layout-manager="GridLayoutManager" row-count="2" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="8935e" binding="panelButtonChoosesCards" layout-manager="GridLayoutManager" row-count="2" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="10" bottom="0" right="10"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="1" use-parent-layout="false">
@@ -30,7 +30,7 @@
         <children>
           <component id="81edd" class="javax.swing.JButton" binding="buttonWithKnownCoef">
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="100" height="10"/>
               </grid>
             </constraints>
@@ -49,7 +49,7 @@
           </vspacer>
           <component id="577e6" class="javax.swing.JButton" binding="buttonWithUnknownCoef">
             <constraints>
-              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <foreground color="-16777216"/>
@@ -58,7 +58,7 @@
           </component>
           <vspacer id="dc0b2">
             <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <component id="b088b" class="javax.swing.JButton" binding="buttonInputParameters">
@@ -72,7 +72,7 @@
           </component>
           <hspacer id="cc1fc">
             <constraints>
-              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
           <hspacer id="49450">
@@ -96,24 +96,24 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="cdc07" binding="cardParameters" layout-manager="GridLayoutManager" row-count="1" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="cdc07" binding="cardParameters" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="10" left="0" bottom="10" right="0"/>
             <constraints>
               <card name="Card1"/>
             </constraints>
             <properties>
               <background color="-2171170"/>
-              <minimumSize width="941" height="200"/>
-              <preferredSize width="941" height="200"/>
+              <minimumSize width="941" height="400"/>
+              <preferredSize width="941" height="400"/>
               <requestFocusEnabled value="true"/>
-              <visible value="false"/>
+              <visible value="true"/>
             </properties>
             <border type="bevel-raised"/>
             <children>
               <grid id="e1d44" binding="inputParametersUART" layout-manager="GridLayoutManager" row-count="8" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="2" left="5" bottom="5" right="20"/>
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="1" use-parent-layout="false">
+                  <grid row="0" column="0" row-span="2" col-span="2" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="1" use-parent-layout="false">
                     <preferred-size width="100" height="100"/>
                   </grid>
                 </constraints>
@@ -310,7 +310,7 @@
               <grid id="152d4" binding="parametersFilter" layout-manager="GridLayoutManager" row-count="8" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="2" left="5" bottom="5" right="10"/>
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="0" column="2" row-span="2" col-span="2" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="100" height="100"/>
                   </grid>
                 </constraints>
@@ -335,7 +335,11 @@
                         <preferred-size width="100" height="-1"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <maximum value="1000"/>
+                      <minimum value="0"/>
+                      <value value="500"/>
+                    </properties>
                   </component>
                   <component id="3dd24" class="javax.swing.JLabel">
                     <constraints>
@@ -510,27 +514,162 @@
               </grid>
               <hspacer id="d2b58">
                 <constraints>
-                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="4" row-span="3" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <hspacer id="5491">
+              <hspacer id="99d8e">
                 <constraints>
-                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <hspacer id="917dc">
+              <hspacer id="bf25b">
                 <constraints>
-                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <hspacer id="a0522">
+              <grid id="9a77d" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="5" left="0" bottom="10" right="0"/>
                 <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="300" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-2171170"/>
+                </properties>
+                <border type="bevel-raised"/>
+                <children>
+                  <component id="91a1e" class="javax.swing.JRadioButton" binding="buttonUnCountinueMeas">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-2171170"/>
+                      <font name="Arial" size="14" style="1"/>
+                      <foreground color="-16777216"/>
+                      <text value="Одиночные измерения"/>
+                    </properties>
+                  </component>
+                  <component id="20989" class="javax.swing.JRadioButton" binding="buttonContinueMeas">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-2171170"/>
+                      <font name="Arial" size="14" style="1"/>
+                      <foreground color="-16777216"/>
+                      <text value="Непрерывные измерения"/>
+                    </properties>
+                  </component>
+                  <grid id="e8c76" binding="floatingPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="4" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-2171170"/>
+                      <visible value="false"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="6236a" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="50" height="25"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <component id="a05e5" class="javax.swing.JTextField">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="50" height="25"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                        </properties>
+                      </component>
+                      <component id="39c5c" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font/>
+                          <foreground color="-16777216"/>
+                          <text value="tmax = "/>
+                        </properties>
+                      </component>
+                      <component id="83a99" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font/>
+                          <foreground color="-16777216"/>
+                          <text value="tau = "/>
+                        </properties>
+                      </component>
+                      <component id="e8749" class="javax.swing.JComboBox" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <foreground color="-16777216"/>
+                          <model>
+                            <item value="c"/>
+                            <item value="mc"/>
+                            <item value="μc"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="e22f3" class="javax.swing.JComboBox" default-binding="true">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <foreground color="-16777216"/>
+                          <model>
+                            <item value="c"/>
+                            <item value="mc"/>
+                            <item value="μc"/>
+                          </model>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <component id="def79" class="javax.swing.JRadioButton" binding="turnOnFilters">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-2171170"/>
+                      <enabled value="false"/>
+                      <font name="Arial" size="14" style="1"/>
+                      <foreground color="-16777216"/>
+                      <text value="Включить фильтрацию"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <hspacer id="9a5a1">
+                <constraints>
+                  <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="a4b6e">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
             </children>
           </grid>
-          <grid id="92de5" binding="cardKnownCoefficientsPanel" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="92de5" binding="cardKnownCoefficientsPanel" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="5" left="10" bottom="5" right="0"/>
             <constraints>
               <card name="Card2"/>
@@ -544,7 +683,7 @@
             <children>
               <component id="c5d20" class="javax.swing.JLabel" binding="labelArticleCard1">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font name="Arial" size="14" style="1"/>
@@ -552,25 +691,15 @@
                   <text value="Выберите и введите коэффициенты для нахождения ε' и ε''"/>
                 </properties>
               </component>
-              <component id="9a3de" class="javax.swing.JButton" binding="mainButtonCard1">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-4473925"/>
-                  <foreground color="-16777216"/>
-                  <text value="Рассчитать"/>
-                </properties>
-              </component>
               <hspacer id="a9d47">
                 <constraints>
-                  <grid row="1" column="4" row-span="3" col-span="1" vsize-policy="1" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="1" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
               <grid id="6e5e9" binding="inputCoefficientsPanelCard1RealE" layout-manager="GridLayoutManager" row-count="10" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="10" left="5" bottom="3" right="0"/>
                 <constraints>
-                  <grid row="1" column="0" row-span="3" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-2171170"/>
@@ -1029,7 +1158,7 @@
               <grid id="4e9a6" binding="inputCoefficientsPanelCard1ImpE" layout-manager="GridLayoutManager" row-count="10" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="10" left="5" bottom="3" right="0"/>
                 <constraints>
-                  <grid row="1" column="1" row-span="3" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-2171170"/>
@@ -1485,10 +1614,10 @@
                   </component>
                 </children>
               </grid>
-              <grid id="c3af5" binding="epsOutputPanel" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="c3af5" binding="epsOutputPanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="10" bottom="10" right="0"/>
                 <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-2171170"/>
@@ -1497,7 +1626,7 @@
                 <children>
                   <component id="3fa0a" class="javax.swing.JLabel" binding="titleEpsPanel">
                     <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <font name="Arial" size="14" style="1"/>
@@ -1527,17 +1656,17 @@
                   </component>
                   <vspacer id="dafbc">
                     <constraints>
-                      <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                      <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </vspacer>
                   <vspacer id="dc1ab">
                     <constraints>
-                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </vspacer>
                   <component id="ca238" class="javax.swing.JTextField" binding="valueRealEpsCard1">
                     <constraints>
-                      <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="25"/>
                       </grid>
                     </constraints>
@@ -1552,7 +1681,7 @@
                   </component>
                   <component id="358d6" class="javax.swing.JTextField" binding="valueImpEpsCard1">
                     <constraints>
-                      <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="25"/>
                       </grid>
                     </constraints>
@@ -1564,128 +1693,16 @@
                       <foreground color="-16777216"/>
                     </properties>
                   </component>
-                </children>
-              </grid>
-              <grid id="3ec8b" binding="chooseMeasurementsCard1" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="5" left="0" bottom="10" right="0"/>
-                <constraints>
-                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="300" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-2171170"/>
-                </properties>
-                <border type="etched"/>
-                <children>
-                  <component id="1ac4a" class="javax.swing.JRadioButton" binding="buttonUnCountinueMeas">
+                  <component id="9a3de" class="javax.swing.JButton" binding="mainButtonCard1">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <background color="-2171170"/>
-                      <font name="Arial" size="14" style="1"/>
+                      <background color="-4473925"/>
                       <foreground color="-16777216"/>
-                      <text value="Одиночные измерения"/>
+                      <text value="Рассчитать"/>
                     </properties>
                   </component>
-                  <component id="2888b" class="javax.swing.JRadioButton" binding="buttonContinueMeas">
-                    <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-2171170"/>
-                      <font name="Arial" size="14" style="1"/>
-                      <foreground color="-16777216"/>
-                      <text value="Непрерывные измерения"/>
-                    </properties>
-                  </component>
-                  <grid id="af99" binding="floatingPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                    <margin top="0" left="0" bottom="0" right="0"/>
-                    <constraints>
-                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="4" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-2171170"/>
-                      <visible value="false"/>
-                    </properties>
-                    <border type="none"/>
-                    <children>
-                      <component id="35175" class="javax.swing.JTextField" binding="textField1" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="50" height="25"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <background color="-1"/>
-                          <text value=""/>
-                        </properties>
-                      </component>
-                      <component id="a2b23" class="javax.swing.JTextField" binding="textField2" default-binding="true">
-                        <constraints>
-                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                            <preferred-size width="50" height="25"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <background color="-1"/>
-                        </properties>
-                      </component>
-                      <component id="9f07d" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <font name="Arial" size="14" style="0"/>
-                          <foreground color="-16777216"/>
-                          <text value="tmax = "/>
-                        </properties>
-                      </component>
-                      <component id="324f2" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <font name="Arial" size="14" style="0"/>
-                          <foreground color="-16777216"/>
-                          <text value="tau = "/>
-                        </properties>
-                      </component>
-                      <component id="4efc5" class="javax.swing.JComboBox" binding="comboBox8" default-binding="true">
-                        <constraints>
-                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="50" height="-1"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <background color="-1"/>
-                          <foreground color="-16777216"/>
-                          <model>
-                            <item value="c"/>
-                            <item value="mc"/>
-                            <item value="μc"/>
-                          </model>
-                        </properties>
-                      </component>
-                      <component id="1304a" class="javax.swing.JComboBox" binding="comboBox7" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="50" height="-1"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <background color="-1"/>
-                          <foreground color="-16777216"/>
-                          <model>
-                            <item value="c"/>
-                            <item value="mc"/>
-                            <item value="μc"/>
-                          </model>
-                        </properties>
-                      </component>
-                    </children>
-                  </grid>
                 </children>
               </grid>
             </children>
@@ -1700,7 +1717,7 @@
             </properties>
             <border type="bevel-raised"/>
             <children>
-              <grid id="cfacb" binding="epsMainUnknownCoefCard2" layout-manager="GridLayoutManager" row-count="9" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="cfacb" binding="epsMainUnknownCoefCard2" layout-manager="GridLayoutManager" row-count="9" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="5" left="5" bottom="0" right="0"/>
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -1825,129 +1842,16 @@
                       </component>
                     </children>
                   </grid>
-                  <grid id="4651f" binding="chooseMeasureCard2" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                    <margin top="5" left="0" bottom="10" right="0"/>
-                    <constraints>
-                      <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="300" height="-1"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-2171170"/>
-                    </properties>
-                    <border type="etched"/>
-                    <children>
-                      <component id="5f801" class="javax.swing.JRadioButton" binding="radioButtonUnCountinueMeasCard2">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-2171170"/>
-                          <font name="Arial" size="14" style="1"/>
-                          <foreground color="-16777216"/>
-                          <text value="Одиночные измерения"/>
-                        </properties>
-                      </component>
-                      <component id="8a544" class="javax.swing.JRadioButton" binding="radioButtonContinueMeasCard2">
-                        <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-2171170"/>
-                          <font name="Arial" size="14" style="1"/>
-                          <foreground color="-16777216"/>
-                          <text value="Непрерывные измерения"/>
-                        </properties>
-                      </component>
-                      <grid id="a177b" binding="inputMeasureCard2" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                        <margin top="0" left="0" bottom="0" right="0"/>
-                        <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="4" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-2171170"/>
-                          <visible value="false"/>
-                        </properties>
-                        <border type="none"/>
-                        <children>
-                          <component id="54484" class="javax.swing.JTextField" binding="tmaxCard2">
-                            <constraints>
-                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                                <preferred-size width="50" height="25"/>
-                              </grid>
-                            </constraints>
-                            <properties>
-                              <background color="-1"/>
-                              <text value=""/>
-                            </properties>
-                          </component>
-                          <component id="327e1" class="javax.swing.JTextField" binding="tauCard2">
-                            <constraints>
-                              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                                <preferred-size width="50" height="25"/>
-                              </grid>
-                            </constraints>
-                            <properties>
-                              <background color="-1"/>
-                            </properties>
-                          </component>
-                          <component id="be010" class="javax.swing.JLabel">
-                            <constraints>
-                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                            </constraints>
-                            <properties>
-                              <font/>
-                              <foreground color="-16777216"/>
-                              <text value="tmax = "/>
-                            </properties>
-                          </component>
-                          <component id="2a80d" class="javax.swing.JLabel">
-                            <constraints>
-                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                            </constraints>
-                            <properties>
-                              <font/>
-                              <foreground color="-16777216"/>
-                              <text value="tau = "/>
-                            </properties>
-                          </component>
-                          <component id="aabd4" class="javax.swing.JComboBox" binding="comboBox9" default-binding="true">
-                            <constraints>
-                              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                            </constraints>
-                            <properties>
-                              <background color="-1"/>
-                              <foreground color="-16777216"/>
-                              <model>
-                                <item value="c"/>
-                                <item value="mc"/>
-                                <item value="μc"/>
-                              </model>
-                            </properties>
-                          </component>
-                          <component id="25324" class="javax.swing.JComboBox" binding="comboBox10" default-binding="true">
-                            <constraints>
-                              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                            </constraints>
-                            <properties>
-                              <background color="-1"/>
-                              <foreground color="-16777216"/>
-                              <model>
-                                <item value="c"/>
-                                <item value="mc"/>
-                                <item value="μc"/>
-                              </model>
-                            </properties>
-                          </component>
-                        </children>
-                      </grid>
-                    </children>
-                  </grid>
                   <hspacer id="2f0b8">
                     <constraints>
-                      <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </hspacer>
+                  <vspacer id="6dc5f">
+                    <constraints>
+                      <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                  </vspacer>
                 </children>
               </grid>
               <grid id="f5430" binding="outputCoefficientsCard2" layout-manager="GridLayoutManager" row-count="10" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -2924,6 +2828,8 @@
     <group name="measurements">
       <member id="1ac4a"/>
       <member id="2888b"/>
+      <member id="91a1e"/>
+      <member id="20989"/>
     </group>
     <group name="measurementsCard2">
       <member id="5f801"/>

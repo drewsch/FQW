@@ -114,7 +114,10 @@ public class CalculationCard2 {
         double[][] operation2 = UtilMethods.matrixMultiply(operation1, UtilMethods.transpose(arrayMatrix));
         double[][] operation3 = UtilMethods.matrixMultiply(operation2, matrixEps);
         System.out.println(Arrays.deepToString(operation3));
-
+        for (int i = 0; i < operation3.length; i++) {
+            operation3[i][0] = UtilMethods.round(operation3[i][0],4);
+        }
+        System.out.println(Arrays.deepToString(operation3));
         return operation3;
     }
 }
