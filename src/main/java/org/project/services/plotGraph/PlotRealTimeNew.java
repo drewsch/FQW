@@ -48,9 +48,9 @@ public class PlotRealTimeNew {
     private static double[] fetchData(Container frame) {
         double realEpsValue = 0, impEpsValue = 0;
         for (Component component : frame.getComponents()) { //TODO разобраться с получением значений из тектовых полей
-            if (component instanceof JTextField textField && Objects.equals(textField.getName(), "valueRealEpsCard1")) {
+            if (component instanceof JTextField textField && Objects.equals(textField.getName(), "epsReal")) {
                 realEpsValue = Double.parseDouble(textField.getText());
-            } else if (component instanceof JTextField textField && Objects.equals(textField.getName(), "valueImpEpsCard1")) {
+            } else if (component instanceof JTextField textField && Objects.equals(textField.getName(), "epsImpl")) {
                 impEpsValue = Double.parseDouble(textField.getText());
             }
         }
