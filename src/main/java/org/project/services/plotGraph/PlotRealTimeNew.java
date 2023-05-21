@@ -13,6 +13,8 @@ public class PlotRealTimeNew {
     private final XYChart chart;
     private final SwingWrapper<XYChart> sw;
 
+    private double[][] state = new double[][]{};
+
     private PlotRealTimeNew(XYChart chart, SwingWrapper<XYChart> swingWrapper) {
 
         this.chart = chart;
@@ -33,7 +35,7 @@ public class PlotRealTimeNew {
         return new PlotRealTimeNew(chart, sw);
     }
 
-    public void repaint(Container frame, double[][] oldState) throws Exception { //, step, globalTime
+    public void repaint(Container frame) throws Exception { //double[][] oldState, step, globalTime
 //        globalTime / step === maxStepsCount
 //
 //        if (data.count() < maxStepsCount) {
@@ -41,9 +43,12 @@ public class PlotRealTimeNew {
 //        } else {
 //            ydalyaemn pervuyu tochku
 //        }
+
+        //TODO соедиение массива со старым состоянием графика
         Thread.sleep(1000);
 
         final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{321.123, 123.321}}; //TODO вместо хардкода добавить время
+        this.state = data; // не перезаписывать, а менять (добавлять в конец)
         if (true) { //TODO если данные не 0.0, 0.0
             javax.swing.SwingUtilities.invokeLater(new Runnable() {
                 @Override
