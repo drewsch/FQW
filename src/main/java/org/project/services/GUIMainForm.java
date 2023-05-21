@@ -180,20 +180,21 @@ public class GUIMainForm extends JFrame {
     private CalculationCard2 calculationCard2 = new CalculationCard2();
 
     public void mainGUI() {
+        GUIMainForm form = new GUIMainForm();
         JFrame frame = new JFrame("Microwave sensors(resonant)");
         frame.setLocation(500, 250);
         frame.setPreferredSize(new Dimension(1000, 600));
-        frame.setContentPane(new GUIMainForm().mainPanel);
+        frame.setContentPane(form.mainPanel);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
 
-        PlotRealTimeNew plotRealTimeNew = PlotRealTimeNew.instance(frame);
+        PlotRealTimeNew plotRealTimeNew = PlotRealTimeNew.instance(form.epsOutputPanel);
 
         Thread thread = new Thread(() -> {
             while (true) {
                 try {
-                    plotRealTimeNew.repaint(frame);
+                    plotRealTimeNew.repaint(form.epsOutputPanel);
 
                     Thread.sleep(1000); // Delay for 1 second
                 } catch (Exception e) {

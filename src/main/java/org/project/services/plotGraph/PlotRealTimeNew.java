@@ -20,7 +20,9 @@ public class PlotRealTimeNew {
     }
 
     public static PlotRealTimeNew instance(Container frame) {
-        double[][] initData = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{123.123, 123.321}};
+        double[] data = PlotRealTimeNew.fetchData(frame);
+
+        double[][] initData = new double[][]{data, new double[]{123.123, 123.321}};
 
         final XYChart chart = QuickChart.getChart("Simple XChart Real-time Demo", "Radians", "Sine", "sine", initData[0], initData[1]);
 
@@ -33,7 +35,7 @@ public class PlotRealTimeNew {
 
     public void repaint(Container frame) throws Exception {
         Thread.sleep(1000);
-        final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{321.123, 123.321}};
+        final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{321.123, 123.321}}; //TODO вместо хардкода добавить время
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -45,11 +47,10 @@ public class PlotRealTimeNew {
 
     private static double[] fetchData(Container frame) {
         double realEpsValue = 0, impEpsValue = 0;
-        for (Component component : frame.getComponents()) {
-            System.out.println(component.getName());
-            if (component instanceof JTextField textField && Objects.equals(component.getName(), "valueRealEpsCard1")) {
+        for (Component component : frame.getComponents()) { //TODO разобраться с получением значений из тектовых полей
+            if (component instanceof JTextField textField && Objects.equals(textField.getName(), "valueRealEpsCard1")) {
                 realEpsValue = Double.parseDouble(textField.getText());
-            } else if (component instanceof JTextField textField && Objects.equals(component.getName(), "valueImpEpsCard1")) {
+            } else if (component instanceof JTextField textField && Objects.equals(textField.getName(), "valueImpEpsCard1")) {
                 impEpsValue = Double.parseDouble(textField.getText());
             }
         }

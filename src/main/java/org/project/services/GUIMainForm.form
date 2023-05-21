@@ -106,7 +106,7 @@
               <minimumSize width="941" height="400"/>
               <preferredSize width="941" height="400"/>
               <requestFocusEnabled value="true"/>
-              <visible value="true"/>
+              <visible value="false"/>
             </properties>
             <border type="bevel-raised"/>
             <children>
@@ -1677,6 +1677,7 @@
                       <enabled value="false"/>
                       <font/>
                       <foreground color="-16777216"/>
+                      <text value="0.0"/>
                     </properties>
                   </component>
                   <component id="358d6" class="javax.swing.JTextField" binding="valueImpEpsCard1">
@@ -1691,6 +1692,7 @@
                       <enabled value="false"/>
                       <font/>
                       <foreground color="-16777216"/>
+                      <text value="0.0"/>
                     </properties>
                   </component>
                   <component id="9a3de" class="javax.swing.JButton" binding="mainButtonCard1">
