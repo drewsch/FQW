@@ -26,10 +26,8 @@ public class PlotRealTime {
             final double[][] data = getSineData(phase);
 
             javax.swing.SwingUtilities.invokeLater(new Runnable() {
-
                 @Override
                 public void run() {
-
                     chart.updateXYSeries("sine", data[0], data[1], null);
                     sw.repaintChart();
                 }
@@ -47,6 +45,6 @@ public class PlotRealTime {
             xData[i] = radians;
             yData[i] = Math.sin(radians);
         }
-        return new double[][] { xData, yData };
+        return new double[][]{xData, yData};
     }
 }

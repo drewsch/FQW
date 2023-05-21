@@ -9,6 +9,7 @@ import org.project.services.buttonInteraction.ActionCheckBoxesOutputA;
 import org.project.services.calculationLogic.CalculationCard1;
 import org.project.services.calculationLogic.CalculationCard2;
 import org.project.services.plotGraph.PlotGraph;
+import org.project.services.plotGraph.PlotRealTimeNew;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -187,12 +188,25 @@ public class GUIMainForm extends JFrame {
         frame.pack();
         frame.setVisible(true);
 
+        PlotRealTimeNew plotRealTimeNew = PlotRealTimeNew.instance(frame);
+
+        Thread thread = new Thread(() -> {
+            while (true) {
+                try {
+                    plotRealTimeNew.repaint(frame);
+
+                    Thread.sleep(1000); // Delay for 1 second
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
 
         frame.addWindowListener(new WindowListener() {
             @Override
-            public void windowOpened(WindowEvent e) {
-
-            }
+            public void windowOpened(WindowEvent e) {}
 
             @Override
             public void windowClosing(WindowEvent e) {
@@ -207,31 +221,16 @@ public class GUIMainForm extends JFrame {
                     System.exit(0);
                 }
             }
-
             @Override
-            public void windowClosed(WindowEvent e) {
-
-            }
-
+            public void windowClosed(WindowEvent e) {}
             @Override
-            public void windowIconified(WindowEvent e) {
-
-            }
-
+            public void windowIconified(WindowEvent e) {}
             @Override
-            public void windowDeiconified(WindowEvent e) {
-
-            }
-
+            public void windowDeiconified(WindowEvent e) {}
             @Override
-            public void windowActivated(WindowEvent e) {
-
-            }
-
+            public void windowActivated(WindowEvent e) {}
             @Override
-            public void windowDeactivated(WindowEvent e) {
-
-            }
+            public void windowDeactivated(WindowEvent e) {}
         });
 
     }

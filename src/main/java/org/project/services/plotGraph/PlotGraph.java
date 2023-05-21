@@ -39,7 +39,6 @@ public class PlotGraph {
         String y_axis = "Signal";
         fig = new Plotting(width, height, title, x_axis, y_axis);
         fig.initialisePlot();
-        fig.addStylerCursor();
     }
 
     private void signalButterworthBandPassPlot(double[][] arrayFromDataFormatter) {
@@ -70,12 +69,7 @@ public class PlotGraph {
         //fig.addSignal("Signal", arrayFreqAmpl[1], unFiltersAmplitude, false);
 
         fig.addSignal("Signal2", arrayFreqAmpl[1], amplitude, false);
-
-            fig.plot();
-
-
-
-
+        fig.plot();
     }
 
     private double setAmplitude(double[] amplitude) {
