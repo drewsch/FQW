@@ -22,7 +22,7 @@ public class PlotRealTimeNew {
     public static PlotRealTimeNew instance(Container frame) {
         double[] data = PlotRealTimeNew.fetchData(frame);
 
-        double[][] initData = new double[][]{data, new double[]{123.123, 123.321}};
+        double[][] initData = new double[][]{data, new double[]{123.123, 123.321}}; //TODO вместо хардкода добавить время
 
         final XYChart chart = QuickChart.getChart("Simple XChart Real-time Demo", "Radians", "Sine", "sine", initData[0], initData[1]);
 
@@ -33,16 +33,26 @@ public class PlotRealTimeNew {
         return new PlotRealTimeNew(chart, sw);
     }
 
-    public void repaint(Container frame) throws Exception {
+    public void repaint(Container frame, double[][] oldState) throws Exception { //, step, globalTime
+//        globalTime / step === maxStepsCount
+//
+//        if (data.count() < maxStepsCount) {
+//            vseOk .... stroim grafik
+//        } else {
+//            ydalyaemn pervuyu tochku
+//        }
         Thread.sleep(1000);
+
         final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{321.123, 123.321}}; //TODO вместо хардкода добавить время
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                chart.updateXYSeries("sine", data[0], data[1], null);
-                sw.repaintChart();
-            }
-        });
+        if (true) { //TODO если данные не 0.0, 0.0
+            javax.swing.SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    chart.updateXYSeries("sine", data[0], data[1], null);
+                    sw.repaintChart();
+                }
+            });
+        }
     }
 
     private static double[] fetchData(Container frame) {
