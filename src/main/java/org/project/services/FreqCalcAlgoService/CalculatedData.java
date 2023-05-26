@@ -5,16 +5,10 @@ public class CalculatedData {
     private final double F0;
 
     public CalculatedData(double F0, double Q) {
+        System.out.println(F0);
+        System.out.println(Q);
         this.F0 = F0;
         this.Q = Q;
-    }
-
-    public double getF0() {
-        return F0;
-    }
-
-    public double getQ() {
-        return Q;
     }
 
     public double getA1() {

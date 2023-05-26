@@ -1,7 +1,6 @@
 package org.project.services.calculationLogic;
 
 import org.project.services.FreqCalcAlgoService.CalculatedData;
-import org.project.services.FreqCalcAlgoService.CalculatedDataBuilder;
 import org.project.services.ILogicalCalculationsKnownCoeff.ILogicalCalculationsKnownCoeff;
 
 import javax.swing.*;
@@ -9,8 +8,8 @@ import javax.swing.*;
 public class CalculationCard1 implements ILogicalCalculationsKnownCoeff {
     private final CalculatedData calculatedData;
 
-    public CalculationCard1(CalculatedDataBuilder builder) {
-        this.calculatedData = builder.build();
+    public CalculationCard1(CalculatedData calculatedData) {
+        this.calculatedData = calculatedData;
     }
 
     @Override

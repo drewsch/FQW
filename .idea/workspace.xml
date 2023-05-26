@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="kids_project:jar" />
@@ -9,15 +12,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="test real time plot retrieve - fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedDataBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/DataFormatter.java" afterDir="false" />
+    <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="the end">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedDataBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedDataBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/DataFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesOutputA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesOutputA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/PreparedCalculationItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/PreparedCalculationItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2B.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/fileFormatter/DataFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTimeNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTimeNew.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,27 +84,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;136&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;410&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Андрей/Desktop/jdsp-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.5041021&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "136",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "410",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/Андрей/Desktop/jdsp-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5041021",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Андрей\Desktop\FQW\FQW\src\main\java\org\project" />
@@ -100,7 +115,6 @@
       <recent name="C:\Users\Андрей\Desktop\FQW\FQW" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.project.services.FreqCalcAlgoService" />
       <recent name="org.project.services.plotGraph" />
     </key>
   </component>
@@ -208,7 +222,7 @@
       <workItem from="1684861783230" duration="15875000" />
       <workItem from="1684922815061" duration="4991000" />
       <workItem from="1685003132332" duration="18653000" />
-      <workItem from="1685111654548" duration="995000" />
+      <workItem from="1685111654548" duration="11443000" />
     </task>
     <task id="LOCAL-00001" summary="test reading complete">
       <created>1679256344480</created>
@@ -336,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684703649564</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix code">
+      <created>1685112667290</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685112667290</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +386,9 @@
     <MESSAGE value="ggoooooooooooooooooood" />
     <MESSAGE value="test real time plot retive" />
     <MESSAGE value="test real time plot retrieve - fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="test real time plot retrieve - fix" />
+    <MESSAGE value="fix code" />
+    <MESSAGE value="the end" />
+    <option name="LAST_COMMIT_MESSAGE" value="the end" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

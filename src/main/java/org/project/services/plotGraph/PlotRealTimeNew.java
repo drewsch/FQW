@@ -16,7 +16,7 @@ public class PlotRealTimeNew {
     private XYChart chart;
     private SwingWrapper<XYChart> sw;
 
-    private double[][] state = new double[][]{};
+    private double[][] state;
     private final JFrame swFrame;
 
     private double lastStep = 0.0;
@@ -26,13 +26,12 @@ public class PlotRealTimeNew {
         this.sw = swingWrapper;
         this.state = initData;
         this.swFrame = swFrame;
-        swFrame.setLocation(1250,500);
+        swFrame.setLocation(1250, 500);
     }
 
     public static PlotRealTimeNew instance(Component[] component) {
         double[] data = new double[]{PlotRealTimeNew.fetchData(component)};
 
-//        System.out.println(Arrays.toString(data));
         double[][] initData = new double[][]{new double[]{0.0}, data}; //TODO вместо хардкода добавить время
 
         final XYChart chart = QuickChart.getChart("График зависимости диэл-ой проницаемости от времени", "Time", "Eps1", "signal", initData[0], initData[1]);
@@ -44,13 +43,23 @@ public class PlotRealTimeNew {
         return new PlotRealTimeNew(chart, sw, initData, swFrame);
     }
 
-    public void repaint(Component[] frame, double step, Component[] mainPanel) throws Exception { //double[][] oldState, step, globalTime
+    public void repaint(Component[] frame, double defaultStep, Component[] mainPanel, Component[] floatingPanel) throws Exception {
+        double step = defaultStep;
+
         if (!this.swFrame.isVisible()) {
             for (Component comp : mainPanel) {
                 if (comp instanceof JRadioButton radioButton && Objects.equals(radioButton.getName(), "infCalculationsRadio")) {
                     if (radioButton.isSelected()) {
                         this.swFrame.setVisible(true);
                     }
+                }
+            }
+        }
+
+        for (Component comp : floatingPanel) {
+            if (comp instanceof JTextField textField && Objects.equals(textField.getName(), "fieldNameTau")) {
+                if (!Objects.equals(textField.getText(), "0.5") && Double.parseDouble(textField.getText()) != defaultStep) {
+                    step = Double.parseDouble(textField.getText());
                 }
             }
         }

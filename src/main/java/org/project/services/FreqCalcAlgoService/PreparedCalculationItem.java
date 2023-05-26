@@ -1,14 +1,13 @@
-package org.project.services.calculationAlgorithmFQ;
+package org.project.services.FreqCalcAlgoService;
 
 import org.project.services.fileFormatter.DataFormatter;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class PreparedCalculationItem {
     private final DataFormatter dataFormatter = new DataFormatter();
-    private String strFormat;
-    private double arrData[][];
 
     private double[][] arrayAmplFreq;
 
@@ -32,26 +31,20 @@ public class PreparedCalculationItem {
     }
 
     private void createData(double[][] arrayFromData) {
-        arrayAmplFreq = new double[2][arrayFromData.length];
+        arrayAmplFreq = new double[2][arrayFromData.length - 1];
         for (int i = 0; i < arrayFromData.length - 1; i++) {
             arrayAmplFreq[1][i] = fmin + i * delF; // freq
-        }
-        for (int i = 0; i < arrayFromData.length - 1; i++) {
-            double[] amplitude = arrayFromData[i];
-            arrayAmplFreq[0][i] = setAmplitude(amplitude); // amplitude
+            arrayAmplFreq[0][i] = setAmplitude(arrayFromData[i]); // amplitude
         }
     }
 
     private double setAmplitude(double[] amplitude) {
-        double Umax = 0, Umin = 0;
+        double sum = 0;
         for (double v : amplitude) {
-            if (v > 0) {
-                Umax += v;
-            } else {
-                Umin += v;
-            }
+            sum += Math.abs(v);
         }
-        return (Umax / amplitude.length - Umin / amplitude.length) / 2;
+
+        return sum / amplitude.length;
     }
 
 

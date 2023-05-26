@@ -3,15 +3,16 @@
  */
 package org.project.services;
 
+import com.github.psambit9791.jdsp.misc.UtilMethods;
 import org.project.services.FreqCalcAlgoService.CalculatedData;
 import org.project.services.FreqCalcAlgoService.CalculatedDataBuilder;
 import org.project.services.ILogicalCalculationsKnownCoeff.ILogicalCalculationsKnownCoeff;
 import org.project.services.UartSender.UartSender;
+import org.project.services.buttonInteraction.ActionCheckBoxesA;
 import org.project.services.buttonInteraction.ActionCheckBoxesOutputA;
-import org.project.services.calculationAlgorithmFQ.PreparedCalculationItem;
+import org.project.services.FreqCalcAlgoService.PreparedCalculationItem;
 import org.project.services.calculationLogic.CalculationCard1;
 import org.project.services.calculationLogic.CalculationCard2;
-import org.project.services.calculationLogic.CalculationCard2B;
 import org.project.services.plotGraph.PlotGraph;
 import org.project.services.plotGraph.PlotRealTimeNew;
 
@@ -22,13 +23,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
     private JButton buttonSendParameters;
     private JPanel panelButtonChoosesCards;
     private JButton buttonWithUnknownCoef;
-    private JPanel mainResults;
     private JPanel parentCardPanel;
     private JPanel cardKnownCoefficientsPanel;
     private JLabel labelArticleCard1;
@@ -115,7 +116,6 @@ public class GUIMainForm extends JFrame {
     private JButton mainButtonCard2;
     private JPanel epsMainUnknownCoefCard2;
     private JPanel epsPanelInputCard2;
-    private JPanel inputMeasureCard2;
     private JLabel label1Card2;
     private JSlider slider1FreqMin;
     private JSlider slider2FreqMax;
@@ -134,8 +134,6 @@ public class GUIMainForm extends JFrame {
     private JTextField a7TextField7;
     private JTextField a8TextField8;
     private JTextField a9TextField9;
-    private JRadioButton radioButtonContinueMeasCard2;
-    private JRadioButton radioButtonUnCountinueMeasCard2;
     private JComboBox comboBox1;
     private JComboBox comboBox2;
     private JComboBox comboBox3;
@@ -189,33 +187,47 @@ public class GUIMainForm extends JFrame {
     private JPanel outputCoefficientsCard2B;
     private JPanel mainPanel23;
     private JLabel deltaTime;
-    private JRadioButton bandPassChebyshevRadioButton;
-    private JRadioButton noneRadioButton;
-    private JButton startButton;
-    private JPanel chooseParametersFilter;
-    private JSlider sliderFrequency;
-    private JLabel labelFreq;
-    private JSlider sliderLower;
-    private JSlider sliderHigher;
-    private JLabel labelLower;
-    private JLabel labelHigher;
+    private JTextField fieldNameTau;
     private final JFileChooser fc = new JFileChooser();
-    private int result;
     public String strFormatFile = "data2.txt";
     private Thread mainThread = null;
-    private PlotGraph plotGraph = new PlotGraph();
-    private int kHz = (int) Math.pow(10, 3);
-    private int GHz = (int) Math.pow(10, 9);
-    private int MGz = (int) Math.pow(10, 6);
-    private int clickCounter = 0;
+    private final PlotGraph plotGraph = new PlotGraph();
+    private final int kHz = (int) Math.pow(10, 3);
+    private final int GHz = (int) Math.pow(10, 9);
+    private final int MGz = (int) Math.pow(10, 6);
+    private final int clickCounter = 0;
     private int sizeClicker;
     private int counterClickButtonCard2;
     private int[][] checkCase;
     private int[][] checkCaseB;
-    private CalculationCard2 calculationCard2 = new CalculationCard2();
-    private CalculationCard2B calculationCard2B = new CalculationCard2B();
+    private final CalculationCard2 calculationCard2 = new CalculationCard2();
+    private final CalculationCard2 calculationCard2B = new CalculationCard2();
     private int clickCounterB;
-    private double timeGraph;
+
+    private CalculatedData calculatedData;
+
+    private final HashMap<JCheckBox, JTextField> checkBoxJTextFieldHashMap = new HashMap<JCheckBox, JTextField>(){{
+        put(checkBoxA0, a0TextField0);
+        put(checkBoxA1, a1TextField1);
+        put(checkBoxA2, a2TextField2);
+        put(checkBoxA3, a3TextField3);
+        put(checkBoxA4, a4TextField4);
+        put(checkBoxA5, a5TextField5);
+        put(checkBoxA6, a6TextField6);
+        put(checkBoxA7, a7TextField7);
+        put(checkBoxA8, a8TextField8);
+        put(checkBoxA9, a9TextField9);
+        put(checkBoxB0, b0TextField0);
+        put(checkBoxB1, b1TextField0);
+        put(checkBoxB2, b2TextField0);
+        put(checkBoxB3, b3TextField0);
+        put(checkBoxB4, b4TextField0);
+        put(checkBoxB5, b5TextField0);
+        put(checkBoxB6, b6TextField0);
+        put(checkBoxB7, b7TextField0);
+        put(checkBoxB8, b8TextField0);
+        put(checkBoxB9, b9TextField0);
+    }};
 
     public void mainGUI() {
         GUIMainForm form = this;
@@ -269,14 +281,14 @@ public class GUIMainForm extends JFrame {
         });
     }
 
-    private Thread pressF(JPanel epsOutputPanel, PlotRealTimeNew plotRealTimeNew, JPanel mainPanel) {
+    private Thread pressF(JPanel epsOutputPanel, PlotRealTimeNew plotRealTimeNew, JPanel mainPanel, JPanel floatingPanel) {
         Component[] components = epsOutputPanel.getComponents();
 
         return new Thread(() -> {
             while (true) {
                 try {
 
-                    plotRealTimeNew.repaint(components, 50, mainPanel.getComponents());
+                    plotRealTimeNew.repaint(components, 50, mainPanel.getComponents(), floatingPanel.getComponents());
 
                     Thread.sleep(1000); // Delay for 1 second
                 } catch (Exception e) {
@@ -291,7 +303,7 @@ public class GUIMainForm extends JFrame {
         buttonWithUnknownCoef.setEnabled(false);
         buttonWithKnownCoef.setEnabled(false);
         PlotRealTimeNew plotRealTimeNew = PlotRealTimeNew.instance(this.epsOutputPanel.getComponents());
-        Thread repaintChartThread = pressF(this.epsOutputPanel, plotRealTimeNew, this.mainPanel23);
+        Thread repaintChartThread = pressF(this.epsOutputPanel, plotRealTimeNew, this.mainPanel23, this.floatingPanel);
 
         /** код для чтения выбранного файла
          buttonSendParameters.addActionListener(e -> {
@@ -348,8 +360,7 @@ public class GUIMainForm extends JFrame {
                 turnOnFilters.setEnabled(true);
                 buttonWithKnownCoef.setEnabled(true);
                 buttonWithUnknownCoef.setEnabled(true);
-//                DataFileFromCalculation dataFileFromCalculation = new DataFileFromCalculation();
-//                dataFileFromCalculation.startData(strFormatFile);
+                calculatedData = new CalculatedDataBuilder(new PreparedCalculationItem(strFormatFile)).build();
                 // TODO: отправка параметров по sendUart
                 // TODO: ожидание чтения Uart Reader
             }
@@ -419,138 +430,16 @@ public class GUIMainForm extends JFrame {
             }
         });
 
-
-        /**
-         * -----!function card1!------
-         */
-
-        checkBoxA0.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA0.isSelected()) {
-                    a0TextField0.setEnabled(true);
-                } else {
-                    a0TextField0.setEnabled(false);
-                    a0TextField0.setText("0");
-                }
-
-
-            }
-        });
-        checkBoxA1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA1.isSelected()) {
-                    a1TextField1.setEnabled(true);
-                } else {
-                    a1TextField1.setEnabled(false);
-                    a1TextField1.setText("0");
-                }
-
-            }
-        });
-        checkBoxA2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA2.isSelected()) {
-                    a2TextField2.setEnabled(true);
-                } else {
-                    a2TextField2.setEnabled(false);
-                    a2TextField2.setText("0");
-                }
-
-            }
-        });
-        checkBoxA3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA3.isSelected()) {
-                    a3TextField3.setEnabled(true);
-                } else {
-                    a3TextField3.setEnabled(false);
-                    a3TextField3.setText("0");
-                }
-
-            }
-        });
-        checkBoxA4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA4.isSelected()) {
-                    a4TextField4.setEnabled(true);
-                } else {
-                    a4TextField4.setEnabled(false);
-                    a4TextField4.setText("0");
-                }
-
-            }
-        });
-        checkBoxA5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA5.isSelected()) {
-                    a5TextField5.setEnabled(true);
-                } else {
-                    a5TextField5.setEnabled(false);
-                    a5TextField5.setText("0");
-                }
-                a5TextField5.setEnabled(checkBoxA5.isSelected());
-            }
-        });
-        checkBoxA6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA6.isSelected()) {
-                    a6TextField6.setEnabled(true);
-                } else {
-                    a6TextField6.setEnabled(false);
-                    a6TextField6.setText("0");
-                }
-
-            }
-        });
-        checkBoxA7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA7.isSelected()) {
-                    a7TextField7.setEnabled(true);
-                } else {
-                    a7TextField7.setEnabled(false);
-                    a7TextField7.setText("0");
-                }
-
-            }
-        });
-        checkBoxA8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA8.isSelected()) {
-                    a8TextField8.setEnabled(true);
-                } else {
-                    a8TextField8.setEnabled(false);
-                    a8TextField8.setText("0");
-                }
-
-            }
-        });
-        checkBoxA9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxA9.isSelected()) {
-                    a9TextField9.setEnabled(true);
-                } else {
-                    a9TextField9.setEnabled(false);
-                    a9TextField9.setText("0");
-                }
-
-            }
-        });
+        for (Map.Entry<JCheckBox, JTextField> entry : checkBoxJTextFieldHashMap.entrySet()) {
+            JCheckBox checkBox = entry.getKey();
+            JTextField textField = entry.getValue();
+            checkBox.addActionListener(ActionCheckBoxesA.build(textField));
+        }
 
         buttonContinueMeas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 floatingPanel.setVisible(true);
-                // timeGraph = Double.parseDouble(deltaTime.getText());
             }
         });
         buttonUnCountinueMeas.addActionListener(new ActionListener() {
@@ -562,147 +451,47 @@ public class GUIMainForm extends JFrame {
         mainButtonCard1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ILogicalCalculationsKnownCoeff calculations = new CalculationCard1(
-                        new CalculatedDataBuilder(
-                                new PreparedCalculationItem(strFormatFile)
+                ILogicalCalculationsKnownCoeff calculations = new CalculationCard1(calculatedData);
+                valueRealEpsCard1.setText(
+                        String.valueOf(
+                                UtilMethods.round(
+                                        calculations.calculationRealPArt(
+                                                a0TextField0, a1TextField1, a2TextField2,
+                                                a3TextField3, a4TextField4, a5TextField5,
+                                                a6TextField6, a7TextField7, a8TextField8,
+                                                a9TextField9),
+                                        4)
                         )
                 );
-                valueRealEpsCard1.setText(String.valueOf((calculations.calculationRealPArt(a0TextField0, a1TextField1, a2TextField2, a3TextField3, a4TextField4,
-                        a5TextField5, a6TextField6, a7TextField7, a8TextField8, a9TextField9))));
 
-                valueImpEpsCard1.setText(String.valueOf(calculations.calculationImaginaryPart(b0TextField0, b1TextField0, b2TextField0, b3TextField0, b4TextField0,
-                        b5TextField0, b6TextField0, b7TextField0, b8TextField0, b9TextField0)));
+                valueImpEpsCard1.setText(
+                        String.valueOf(
+                                UtilMethods.round(
+                                        calculations.calculationImaginaryPart(
+                                                b0TextField0, b1TextField0, b2TextField0,
+                                                b3TextField0, b4TextField0, b5TextField0,
+                                                b6TextField0, b7TextField0, b8TextField0,
+                                                b9TextField0),
+                                        4)
+                        )
+                );
             }
         });
-        checkBoxB0.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB0.isSelected()) {
-                    b0TextField0.setEnabled(true);
-                } else {
-                    b0TextField0.setEnabled(false);
-                    b0TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB1.isSelected()) {
-                    b1TextField0.setEnabled(true);
-                } else {
-                    b1TextField0.setEnabled(false);
-                    b1TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB2.isSelected()) {
-                    b2TextField0.setEnabled(true);
-                } else {
-                    b2TextField0.setEnabled(false);
-                    b2TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB3.isSelected()) {
-                    b3TextField0.setEnabled(true);
-                } else {
-                    b3TextField0.setEnabled(false);
-                    b3TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB4.isSelected()) {
-                    b4TextField0.setEnabled(true);
-                } else {
-                    b4TextField0.setEnabled(false);
-                    b4TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB5.isSelected()) {
-                    b5TextField0.setEnabled(true);
-                } else {
-                    b5TextField0.setEnabled(false);
-                    b5TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB6.isSelected()) {
-                    b6TextField0.setEnabled(true);
-                } else {
-                    b6TextField0.setEnabled(false);
-                    b6TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB7.isSelected()) {
-                    b7TextField0.setEnabled(true);
-                } else {
-                    b7TextField0.setEnabled(false);
-                    b7TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB8.isSelected()) {
-                    b8TextField0.setEnabled(true);
-                } else {
-                    b8TextField0.setEnabled(false);
-                    b8TextField0.setText("0");
-                }
-            }
-        });
-        checkBoxB9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBoxB9.isSelected()) {
-                    b9TextField0.setEnabled(true);
-                } else {
-                    b9TextField0.setEnabled(false);
-                    b9TextField0.setText("0");
-                }
-            }
-        });
-
-
         /**
          * -----!function card2!------
          */
         mainButtonCard2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CalculatedDataBuilder dataBuilder = new CalculatedDataBuilder(new PreparedCalculationItem(strFormatFile));
-                CalculatedData data = dataBuilder.build();
                 counterClickButtonCard2++;
                 Component[] comps = outputCoefficientsCard2.getComponents();
-                calculationCard2.linearEquations(comps, checkCase, counterClickButtonCard2, inputRealEps, data);
+                calculationCard2.linearEquations(comps, checkCase, counterClickButtonCard2, inputRealEps, calculatedData);
                 if (counterClickButtonCard2 == sizeClicker) {
                     returnCoefficients(calculationCard2.calculationMatrix(calculationCard2.addNumberInMatrix(sizeClicker, checkCase)));
                 }
 
                 Component[] compsB = outputCoefficientsCard2B.getComponents();
-                calculationCard2B.linearEquations(compsB, checkCaseB, counterClickButtonCard2, inputImpEps, data);
+                calculationCard2B.linearEquations(compsB, checkCaseB, counterClickButtonCard2, inputImpEps, calculatedData);
                 if (counterClickButtonCard2 == sizeClicker) {
                     returnCoefficientsB(calculationCard2B.calculationMatrix(calculationCard2B.addNumberInMatrix(sizeClicker, checkCaseB)));
                 }
@@ -739,11 +528,7 @@ public class GUIMainForm extends JFrame {
         turnOnFilters.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (turnOnFilters.isSelected()) {
-                    parametersFilter.setVisible(true);
-                } else {
-                    parametersFilter.setVisible(false);
-                }
+                parametersFilter.setVisible(turnOnFilters.isSelected());
             }
         });
     }
@@ -782,15 +567,12 @@ public class GUIMainForm extends JFrame {
             setOutputText(getOutputFieldB(key), matrix, i);
         }
     }
-
     private int returnPow(JComboBox comboBox) {
-        if (comboBox.getSelectedIndex() == 0) {
-            return kHz;
-        } else if (comboBox.getSelectedIndex() == 1) {
-            return MGz;
-        } else {
-            return GHz;
-        }
+        return switch (comboBox.getSelectedIndex()) {
+            case 0 -> kHz;
+            case 1 -> MGz;
+            default -> GHz;
+        };
     }
 }
 

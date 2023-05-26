@@ -27,7 +27,6 @@ public class DataFormatter implements IRealizationData {
                 }
             }
             reader.close();
-
         return ArrayFile;
     }
 

@@ -1,11 +1,7 @@
 package org.project.services.FreqCalcAlgoService;
 
-import org.project.services.calculationAlgorithmFQ.PreparedCalculationItem;
-
 public class CalculatedDataBuilder {
-    private double F0; //Math.pow(10,9);
-    private double Q;
-    private PreparedCalculationItem preparedCalculationItem;
+    private final PreparedCalculationItem preparedCalculationItem;
     private double[] arrA;
     private double[] arrF;
     private double maxValueAmpl = 0;
@@ -18,7 +14,8 @@ public class CalculatedDataBuilder {
     }
 
     public CalculatedData build() {
-        return new CalculatedData(this.calcMaxAmplFreqRes(), this.calculateQ());
+        double F0 = this.calcMaxAmplFreqRes();
+        return new CalculatedData(F0, this.calculateQ(F0));
     }
 
     private double calcMaxAmplFreqRes() {
@@ -30,17 +27,17 @@ public class CalculatedDataBuilder {
             }
         }
 
-        arrF = preparedCalculationItem.getArrayAmplFreq()[1];
+        arrF = this.preparedCalculationItem.getArrayAmplFreq()[1];
         return arrF[keyMaxAmpl];
     }
 
-    private double calculateQ() {
+    private double calculateQ(double F0) {
         return F0 / searchDifferenceFrequency();
     }
 
     private double searchDifferenceFrequency() {
         double ampl0707 = maxValueAmpl * 0.707;
-        for (int i = 0; i < maxValueAmpl; i++) {
+        for (int i = 0; arrA[i] < maxValueAmpl; i++) {
             if (arrA[i] > ampl0707) {
                 keyFirst0707 = i;
                 break;

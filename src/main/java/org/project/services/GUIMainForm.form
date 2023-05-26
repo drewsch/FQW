@@ -573,7 +573,7 @@
                     </constraints>
                     <properties>
                       <background color="-2171170"/>
-                      <visible value="false"/>
+                      <visible value="true"/>
                     </properties>
                     <border type="none"/>
                     <children>
@@ -589,7 +589,7 @@
                           <visible value="false"/>
                         </properties>
                       </component>
-                      <component id="a05e5" class="javax.swing.JTextField">
+                      <component id="a05e5" class="javax.swing.JTextField" binding="fieldNameTau">
                         <constraints>
                           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="50" height="25"/>
@@ -597,6 +597,9 @@
                         </constraints>
                         <properties>
                           <background color="-1"/>
+                          <name value="fieldNameTau"/>
+                          <text value="0.5"/>
+                          <visible value="true"/>
                         </properties>
                       </component>
                       <component id="39c5c" class="javax.swing.JLabel">

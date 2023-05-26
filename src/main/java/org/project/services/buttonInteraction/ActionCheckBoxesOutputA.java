@@ -15,7 +15,6 @@ public class ActionCheckBoxesOutputA implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        System.out.println(obj.getClass().toString());
         if (obj instanceof JCheckBox checkBox) {
             if (clickCounter < sizeClicker && checkBox.isSelected()) {
                 clickCounter++;
@@ -24,9 +23,6 @@ public class ActionCheckBoxesOutputA implements ActionListener {
             } else {
                 clickCounter--;
             }
-            System.out.println("test");
-            System.out.println(clickCounter);
-            System.out.println(sizeClicker);
         }
     }
 }

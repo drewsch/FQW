@@ -2,10 +2,6 @@ package org.project.services.calculationLogic;
 
 import com.github.psambit9791.jdsp.misc.UtilMethods;
 import org.project.services.FreqCalcAlgoService.CalculatedData;
-import org.project.services.FreqCalcAlgoService.CalculatedDataBuilder;
-import org.project.services.calculationAlgorithmFQ.CalculationAlgorithm;
-import org.project.services.calculationAlgorithmFQ.PreparedCalculationItem;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -89,7 +85,6 @@ public class CalculationCard2 {
 
             }
         }
-//        System.out.println(Arrays.deepToString(arrayMatrix));
         int key = 0;
         for (int i = 0; i < sizeClicker; i++) {
             for (int j = 0; j < sizeClicker; j++) {
@@ -99,10 +94,6 @@ public class CalculationCard2 {
                 }
             }
         }
-//        System.out.println(Arrays.deepToString(checkCase));
-//
-//        System.out.println(realEps);
-//        System.out.println(Arrays.deepToString(arrayMatrix));
         return arrayMatrix;
 
     }
