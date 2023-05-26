@@ -8,6 +8,7 @@ import org.project.services.UartSender.UartSender;
 import org.project.services.buttonInteraction.ActionCheckBoxesOutputA;
 import org.project.services.calculationLogic.CalculationCard1;
 import org.project.services.calculationLogic.CalculationCard2;
+import org.project.services.calculationLogic.CalculationCard2B;
 import org.project.services.plotGraph.PlotGraph;
 import org.project.services.plotGraph.PlotRealTimeNew;
 
@@ -16,6 +17,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.HashMap;
+import java.util.List;
 
 public class GUIMainForm extends JFrame {
     private JPanel mainPanel;
@@ -57,6 +60,31 @@ public class GUIMainForm extends JFrame {
     private JLabel titleEpsPanel;
     private JPanel cardUnknownCoefficientsPanel;
     private JPanel outputCoefficientsCard2;
+
+    final private HashMap<Integer, JTextField> A_COEFS_TO_FIELDS_MAP = new HashMap<>(){{
+        put(0, outputCoefA0);
+        put(1, outputCoefA1);
+        put(2, outputCoefA2);
+        put(3, outputCoefA3);
+        put(4, outputCoefA4);
+        put(5, outputCoefA5);
+        put(6, outputCoefA6);
+        put(7, outputCoefA7);
+        put(8, outputCoefA8);
+        put(9, outputCoefA9);
+    }};
+    final private HashMap<Integer, JTextField> B_COEFC_TO_FiELDS_MAP = new HashMap<>() {{
+        put(0,outputCoefB0);
+        put(1,outputCoefB1);
+        put(2,outputCoefB2);
+        put(3,outputCoefB3);
+        put(4,outputCoefB4);
+        put(5,outputCoefB5);
+        put(6,outputCoefB6);
+        put(7,outputCoefB7);
+        put(8,outputCoefB8);
+        put(9,outputCoefB9);
+    }};
     private JTextField outputCoefA0;
     private JTextField outputCoefA1;
     private JTextField outputCoefA2;
@@ -155,6 +183,9 @@ public class GUIMainForm extends JFrame {
     private JCheckBox checkBoxOutB8;
     private JCheckBox checkBoxOutB9;
     private JRadioButton turnOnFilters;
+    private JPanel outputCoefficientsCard2B;
+    private JPanel mainPanel23;
+    private JLabel deltaTime;
     private JRadioButton bandPassChebyshevRadioButton;
     private JRadioButton noneRadioButton;
     private JButton startButton;
@@ -177,10 +208,14 @@ public class GUIMainForm extends JFrame {
     private int sizeClicker;
     private int counterClickButtonCard2;
     private int[][] checkCase;
+    private int[][] checkCaseB;
     private CalculationCard2 calculationCard2 = new CalculationCard2();
+    private CalculationCard2B calculationCard2B = new CalculationCard2B();
+    private int clickCounterB;
+    private double timeGraph;
 
     public void mainGUI() {
-        GUIMainForm form = new GUIMainForm();
+        GUIMainForm form = this;
         JFrame frame = new JFrame("Microwave sensors(resonant)");
         frame.setLocation(500, 250);
         frame.setPreferredSize(new Dimension(1000, 600));
@@ -189,25 +224,11 @@ public class GUIMainForm extends JFrame {
         frame.pack();
         frame.setVisible(true);
 
-        PlotRealTimeNew plotRealTimeNew = PlotRealTimeNew.instance(form.epsOutputPanel);
-
-        Thread thread = new Thread(() -> {
-            while (true) {
-                try {
-                    plotRealTimeNew.repaint(form.epsOutputPanel);
-
-                    Thread.sleep(1000); // Delay for 1 second
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        thread.start();
 
         frame.addWindowListener(new WindowListener() {
             @Override
-            public void windowOpened(WindowEvent e) {}
+            public void windowOpened(WindowEvent e) {
+            }
 
             @Override
             public void windowClosing(WindowEvent e) {
@@ -233,13 +254,31 @@ public class GUIMainForm extends JFrame {
             @Override
             public void windowDeactivated(WindowEvent e) {}
         });
+    }
 
+    private Thread pressF(JPanel epsOutputPanel, PlotRealTimeNew plotRealTimeNew, JPanel mainPanel) {
+        Component[] components = epsOutputPanel.getComponents();
+
+        return new Thread(() -> {
+            while (true) {
+                try {
+
+                    plotRealTimeNew.repaint(components, 50, mainPanel.getComponents());
+
+                    Thread.sleep(1000); // Delay for 1 second
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     public GUIMainForm() {
         parametersFilter.setVisible(false);
         buttonWithUnknownCoef.setEnabled(false);
         buttonWithKnownCoef.setEnabled(false);
+        PlotRealTimeNew plotRealTimeNew = PlotRealTimeNew.instance(this.epsOutputPanel.getComponents());
+        Thread repaintChartThread = pressF(this.epsOutputPanel, plotRealTimeNew, this.mainPanel23);
 
         /** код для чтения выбранного файла
          buttonSendParameters.addActionListener(e -> {
@@ -247,8 +286,6 @@ public class GUIMainForm extends JFrame {
          fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
          result = fc.showOpenDialog(GUIMainForm.this);
          });
-
-
          buttonSendParameters.addChangeListener(new ChangeListener() {
         @Override public void stateChanged(ChangeEvent e) {
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -257,96 +294,6 @@ public class GUIMainForm extends JFrame {
         }
         }
         });*/
-//
-//        startButton.addActionListener(e -> {
-//
-//            OutDoubleArray outDoubleArray = new OutDoubleArray();
-//            outDoubleArray.printDoubleFileArray(strFormatFile);
-//
-//            if (mainThread != null) {
-//                mainThread.start();
-//                bandPassChebyshevRadioButton.setSelected(false);
-//                noneRadioButton.setSelected(true);
-//                noneRadioButton.setSelected(false);
-//                bandPassChebyshevRadioButton.setSelected(true);
-////                noneRadioButton.setEnabled(false);
-////                bandPassChebyshevRadioButton.setEnabled(false);
-////                startButton.setEnabled(false);
-//
-//            }
-//        });
-//
-//        bandPassChebyshevRadioButton.addItemListener(new ItemListener() {
-//
-//            @Override
-//            public void itemStateChanged(ItemEvent e) {
-//
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException ex) {
-//                    throw new RuntimeException(ex);
-//                }
-//                mainThread = new Thread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        plotGraph.signalPlot(strFormatFile, true);
-//                    }
-//                });
-//            }
-//
-//        });
-//
-//        noneRadioButton.addItemListener(new ItemListener() {
-//            @Override
-//            public void itemStateChanged(ItemEvent e) {
-//                chooseParametersFilter.setVisible(false);
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException ex) {
-//                    throw new RuntimeException(ex);
-//                }
-//
-//                mainThread = new Thread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        plotGraph.signalPlot(strFormatFile, false);
-//                    }
-//                });
-//            }
-//        });
-//        chooseParametersFilter.setVisible(false);
-//        bandPassChebyshevRadioButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                chooseParametersFilter.setVisible(true);
-//            }
-//
-//        });
-//
-//        sliderFrequency.addChangeListener(new ChangeListener() {
-//            @Override
-//            public void stateChanged(ChangeEvent e) {
-//                int sliderFrequencyValue = sliderFrequency.getValue();
-//                plotGraph.setFs(sliderFrequencyValue);
-//                labelFreq.setText("Frequency : " + sliderFrequencyValue);
-//            }
-//        });
-//        sliderLower.addChangeListener(new ChangeListener() {
-//            @Override
-//            public void stateChanged(ChangeEvent e) {
-//                int sliderLowerValue = sliderLower.getValue();
-//                plotGraph.setLowCutOff(sliderLowerValue);
-//                labelLower.setText("Lower cut freq : " + sliderLowerValue);
-//            }
-//        });
-//        sliderHigher.addChangeListener(new ChangeListener() {
-//            @Override
-//            public void stateChanged(ChangeEvent e) {
-//                int sliderHigherValue = sliderHigher.getValue();
-//                plotGraph.setHighCutOff(sliderHigherValue);
-//                labelHigher.setText("Higher cut freq : " + sliderHigherValue);
-//            }
-//        });
 
         buttonInputParameters.addActionListener(new ActionListener() {
             @Override
@@ -364,6 +311,9 @@ public class GUIMainForm extends JFrame {
                 parentCardPanel.add(cardKnownCoefficientsPanel);
                 parentCardPanel.repaint();
                 parentCardPanel.revalidate();
+                if (buttonContinueMeas.isSelected()) {
+                    repaintChartThread.start();
+                }
             }
         });
         buttonWithUnknownCoef.addActionListener(new ActionListener() {
@@ -385,6 +335,8 @@ public class GUIMainForm extends JFrame {
                 turnOnFilters.setEnabled(true);
                 buttonWithKnownCoef.setEnabled(true);
                 buttonWithUnknownCoef.setEnabled(true);
+//                DataFileFromCalculation dataFileFromCalculation = new DataFileFromCalculation();
+//                dataFileFromCalculation.startData(strFormatFile);
                 // TODO: отправка параметров по sendUart
                 // TODO: ожидание чтения Uart Reader
             }
@@ -585,6 +537,7 @@ public class GUIMainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 floatingPanel.setVisible(true);
+               // timeGraph = Double.parseDouble(deltaTime.getText());
             }
         });
         buttonUnCountinueMeas.addActionListener(new ActionListener() {
@@ -596,9 +549,9 @@ public class GUIMainForm extends JFrame {
         mainButtonCard1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ILogicalCalculationsKnownCoeff calculations = new CalculationCard1();
-                valueRealEpsCard1.setText(String.valueOf(calculations.calculationRealPArt(a0TextField0, a1TextField1, a2TextField2, a3TextField3, a4TextField4,
-                        a5TextField5, a6TextField6, a7TextField7, a8TextField8, a9TextField9)));
+                ILogicalCalculationsKnownCoeff calculations = new CalculationCard1(strFormatFile);
+                valueRealEpsCard1.setText(String.valueOf((calculations.calculationRealPArt(a0TextField0, a1TextField1, a2TextField2, a3TextField3, a4TextField4,
+                        a5TextField5, a6TextField6, a7TextField7, a8TextField8, a9TextField9))));
 
                 valueImpEpsCard1.setText(String.valueOf(calculations.calculationImaginaryPart(b0TextField0, b1TextField0, b2TextField0, b3TextField0, b4TextField0,
                         b5TextField0, b6TextField0, b7TextField0, b8TextField0, b9TextField0)));
@@ -724,11 +677,16 @@ public class GUIMainForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 counterClickButtonCard2++;
                 Component[] comps = outputCoefficientsCard2.getComponents();
-                calculationCard2.linearEquations(comps, checkCase, counterClickButtonCard2, inputRealEps);
+                calculationCard2.linearEquations(comps, checkCase, counterClickButtonCard2, inputRealEps, strFormatFile);
                 if (counterClickButtonCard2 == sizeClicker) {
                     returnCoefficients(calculationCard2.calculationMatrix(calculationCard2.addNumberInMatrix(sizeClicker, checkCase)));
                 }
-                // TODO: calculation matrix
+
+                Component[] compsB = outputCoefficientsCard2B.getComponents();
+                calculationCard2B.linearEquations(compsB, checkCaseB, counterClickButtonCard2, inputImpEps, strFormatFile);
+                if (counterClickButtonCard2 == sizeClicker) {
+                    returnCoefficientsB(calculationCard2B.calculationMatrix(calculationCard2B.addNumberInMatrix(sizeClicker, checkCaseB)));
+                }
             }
         });
         sendQuantitySamples.addActionListener(new ActionListener() {
@@ -741,24 +699,24 @@ public class GUIMainForm extends JFrame {
                 quantitySamples.setEnabled(false);
                 sizeClicker = Integer.parseInt(quantitySamples.getText());
                 checkCase = new int[sizeClicker][10];
-                System.out.println(sizeClicker);
-                System.out.println(quantitySamples.getText());
+                checkCaseB = new int[sizeClicker][10];
 
+                ActionCheckBoxesOutputA actionCheckBoxesOutputA = new ActionCheckBoxesOutputA(clickCounter, sizeClicker);
+                Component[] componentCheckBoxA = outputCoefficientsCard2.getComponents();
+                for (Component component : componentCheckBoxA) {
+                    if (component instanceof JCheckBox checkBox) {
+                        checkBox.addActionListener(actionCheckBoxesOutputA);
+                    }
+                }
+                ActionCheckBoxesOutputA actionCheckBoxesOutputB = new ActionCheckBoxesOutputA(clickCounterB, sizeClicker);
+                Component[] componentCheckBoxB = outputCoefficientsCard2B.getComponents();
+                for (Component component : componentCheckBoxB) {
+                    if (component instanceof JCheckBox checkBox) {
+                        checkBox.addActionListener(actionCheckBoxesOutputB);
+                    }
+                }
             }
         });
-
-        ActionCheckBoxesOutputA actionCheckBoxesOutputA = new ActionCheckBoxesOutputA(clickCounter, sizeClicker);
-        checkBoxOutA0.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA1.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA2.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA3.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA4.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA5.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA6.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA7.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA8.addActionListener(actionCheckBoxesOutputA);
-        checkBoxOutA9.addActionListener(actionCheckBoxesOutputA);
-
         turnOnFilters.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -772,20 +730,35 @@ public class GUIMainForm extends JFrame {
     }
 
     private void returnCoefficients(double[][] matrix) {
-        for (int i = 0; i <  calculationCard2.getColumns().size(); i++) {
-            int key =  calculationCard2.getColumns().get(i);
-            switch (key) {
-                case (0) -> outputCoefA0.setText(String.valueOf(matrix[i][0]));
-                case (1) -> outputCoefA1.setText(String.valueOf(matrix[i][0]));
-                case (2) -> outputCoefA2.setText(String.valueOf(matrix[i][0]));
-                case (3) -> outputCoefA3.setText(String.valueOf(matrix[i][0]));
-                case (4) -> outputCoefA4.setText(String.valueOf(matrix[i][0]));
-                case (5) -> outputCoefA5.setText(String.valueOf(matrix[i][0]));
-                case (6) -> outputCoefA6.setText(String.valueOf(matrix[i][0]));
-                case (7) -> outputCoefA7.setText(String.valueOf(matrix[i][0]));
-                case (8) -> outputCoefA8.setText(String.valueOf(matrix[i][0]));
-                case (9) -> outputCoefA9.setText(String.valueOf(matrix[i][0]));
-            }
+        setTextInCoefficientsA(matrix, calculationCard2.getColumns());
+    }
+
+    private void returnCoefficientsB(double[][] matrix) {
+        setTextInCoefficientsB(matrix, calculationCard2B.getColumns());
+    }
+
+    private void setTextInCoefficientsA(double[][] matrix, List<Integer> columns) {
+
+        for (int i = 0; i < columns.size(); i++) {
+            int key = columns.get(i);
+            setOutputText(getOutputFieldA(key), matrix, i);
+        }
+    }
+
+    private JTextField getOutputFieldA(int key) {
+        return A_COEFS_TO_FIELDS_MAP.get(key);
+    }
+    private JTextField getOutputFieldB(int key) {
+        return B_COEFC_TO_FiELDS_MAP.get(key);
+    }
+    private void setOutputText(JTextField output, double[][] matrix, int i) {
+        output.setText(String.valueOf(matrix[i][0]));
+    }
+
+    private void setTextInCoefficientsB(double[][] matrix, List<Integer> columns) {
+        for (int i = 0; i < columns.size(); i++) {
+            int key = columns.get(i);
+            setOutputText(getOutputFieldB(key), matrix, i);
         }
     }
 

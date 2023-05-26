@@ -6,70 +6,117 @@ import org.knowm.xchart.XYChart;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
+
 
 public class PlotRealTimeNew {
 
-    private final XYChart chart;
-    private final SwingWrapper<XYChart> sw;
+    private XYChart chart;
+    private SwingWrapper<XYChart> sw;
 
     private double[][] state = new double[][]{};
+    private final JFrame swFrame;
 
-    private PlotRealTimeNew(XYChart chart, SwingWrapper<XYChart> swingWrapper) {
+    private double lastStep = 0.0;
 
+    private PlotRealTimeNew(XYChart chart, SwingWrapper<XYChart> swingWrapper, double[][] initData, JFrame swFrame) {
         this.chart = chart;
         this.sw = swingWrapper;
+        this.state = initData;
+        this.swFrame = swFrame;
+        swFrame.setLocation(1250,500);
     }
 
-    public static PlotRealTimeNew instance(Container frame) {
-        double[] data = PlotRealTimeNew.fetchData(frame);
+    public static PlotRealTimeNew instance(Component[] component) {
+        double[] data = new double[]{PlotRealTimeNew.fetchData(component)};
 
-        double[][] initData = new double[][]{data, new double[]{(double) System.currentTimeMillis()}}; //TODO вместо хардкода добавить время
+//        System.out.println(Arrays.toString(data));
+        double[][] initData = new double[][]{new double[]{0.0}, data}; //TODO вместо хардкода добавить время
 
-        final XYChart chart = QuickChart.getChart("Simple XChart Real-time Demo", "Radians", "Sine", "sine", initData[0], initData[1]);
+        final XYChart chart = QuickChart.getChart("График зависимости диэл-ой проницаемости от времени", "Time", "Eps1", "signal", initData[0], initData[1]);
 
         final SwingWrapper<XYChart> sw = new SwingWrapper<XYChart>(chart);
+        JFrame swFrame = sw.displayChart();
+        swFrame.setVisible(false);
 
-        sw.displayChart();
-
-        return new PlotRealTimeNew(chart, sw);
+        return new PlotRealTimeNew(chart, sw, initData, swFrame);
     }
 
-    public void repaint(Container frame) throws Exception { //double[][] oldState, step, globalTime
-//        globalTime / step === maxStepsCount
-//
-//        if (data.count() < maxStepsCount) {
-//            vseOk .... stroim grafik
-//        } else {
-//            ydalyaemn pervuyu tochku
-//        }
+    public void repaint(Component[] frame, double step, Component[] mainPanel) throws Exception { //double[][] oldState, step, globalTime
+        if (!this.swFrame.isVisible()) {
+            for (Component comp : mainPanel) {
+                if (comp instanceof JRadioButton radioButton && Objects.equals(radioButton.getName(), "infCalculationsRadio")) {
+                    if (radioButton.isSelected()) {
+                        this.swFrame.setVisible(true);
+                    }
+                }
+            }
+        }
+
+
+        ArrayList<Double> resultX = new ArrayList<Double>();
+        ArrayList<Double> resultY = new ArrayList<Double>();
+        this.lastStep = this.lastStep + step;
 
         //TODO соедиение массива со старым состоянием графика
         Thread.sleep(1000);
 
-        final double[][] data = new double[][]{PlotRealTimeNew.fetchData(frame), new double[]{(double) System.currentTimeMillis()}}; //TODO вместо хардкода добавить время
-        this.state = data; // не перезаписывать, а менять (добавлять в конец)
-        if (true) { //TODO если данные не 0.0, 0.0
-            javax.swing.SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    chart.updateXYSeries("sine", data[0], data[1], null);
-                    sw.repaintChart();
+        final double[][] data = new double[][]{new double[]{lastStep}, new double[]{PlotRealTimeNew.fetchData(frame)}}; //TODO вместо хардкода добавить время (double) System.currentTimeMillis()
+        double[][] lastData = this.state;
+        int lastItemIndex = Math.max(lastData[1].length - 1, 0);
+
+        if (data[1][0] != 0.0) { //TODO если данные не 0.0, 0.0
+
+            if ((lastItemIndex > 0 && data[1][0] != lastData[1][lastItemIndex]) || lastItemIndex == 0) {
+
+                for (int i = 0; i < lastData[0].length; i++) {
+                    resultX.add(lastData[0][i]);
                 }
-            });
+
+                for (int i = 0; i < lastData[1].length; i++) {
+                    resultY.add(lastData[1][i]);
+                }
+
+                resultX.add(data[0][0]);
+                resultY.add(data[1][0]);
+
+                double[] stateY = resultY.stream().mapToDouble(Double::doubleValue).toArray(); // не перезаписывать, а менять (добавлять в конец)
+                double[] stateX = resultX.stream().mapToDouble(Double::doubleValue).toArray(); // не перезаписывать, а менять (добавлять в конец)
+
+                System.out.println("test");
+                System.out.println(Arrays.toString(stateX));
+
+                this.state = new double[][]{stateX, stateY};
+
+                javax.swing.SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        chart.updateXYSeries("signal", resultX, resultY, null);
+                        sw.repaintChart();
+                    }
+                });
+            } else {
+                this.lastStep -= step;
+            }
+        } else {
+            this.lastStep -= step;
         }
     }
 
-    private static double[] fetchData(Container frame) {
+    private static double fetchData(Component[] frame) {
         double realEpsValue = 0, impEpsValue = 0;
-        for (Component component : frame.getComponents()) {
+        for (Component component : frame) {
             if (component instanceof JTextField textField && Objects.equals(textField.getName(), "epsReal")) {
                 realEpsValue = Double.parseDouble(textField.getText());
-            } else if (component instanceof JTextField textField && Objects.equals(textField.getName(), "epsImpl")) {
-                impEpsValue = Double.parseDouble(textField.getText());
             }
+//            else if (component instanceof JTextField textField && Objects.equals(textField.getName(), "epsImp")) {
+//                impEpsValue = Double.parseDouble(textField.getText());
+//            }
         }
 
-        return new double[]{realEpsValue, impEpsValue};
+        return realEpsValue;
     }
 }
+

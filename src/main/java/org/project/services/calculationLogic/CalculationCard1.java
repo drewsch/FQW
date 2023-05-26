@@ -2,6 +2,7 @@ package org.project.services.calculationLogic;
 
 import org.project.services.ILogicalCalculationsKnownCoeff.ILogicalCalculationsKnownCoeff;
 import org.project.services.calculationAlgorithmFQ.CalculationAlgorithm;
+import org.project.services.calculationAlgorithmFQ.PreparedCalculationItem;
 
 import javax.swing.*;
 
@@ -20,12 +21,11 @@ public class CalculationCard1 implements ILogicalCalculationsKnownCoeff {
     private double F0;
     private double Q;
 
-    public CalculationCard1() {
-        algorithm = new CalculationAlgorithm();
+    public CalculationCard1(String filePath) {
+        algorithm = new CalculationAlgorithm(new PreparedCalculationItem(filePath));
         this.F0 = algorithm.getF0();
         this.Q = algorithm.getQ();
     }
-
     @Override
     public double calculationRealPArt(JTextField a0, JTextField a1, JTextField a2, JTextField a3,
                                       JTextField a4, JTextField a5, JTextField a6, JTextField a7,

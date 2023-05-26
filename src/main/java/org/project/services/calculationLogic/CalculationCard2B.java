@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CalculationCard2 {
+public class CalculationCard2B {
     private List<Double> coefficientEquations = new ArrayList<>();
     private List<Double> realEps = new ArrayList<>();
     private List<Integer> columns;
@@ -109,7 +109,7 @@ public class CalculationCard2 {
     public double[][] calculationMatrix(double[][] arrayMatrix) {
         double[][] matrixEps = new double[realEps.size()][1];
         for (int i = 0; i < realEps.size(); i++) {
-                matrixEps[i][0] = realEps.get(i);
+            matrixEps[i][0] = realEps.get(i);
         }
         double[][] operation1 = UtilMethods.pseudoInverse(UtilMethods.matrixMultiply(UtilMethods.transpose(arrayMatrix), arrayMatrix));
         double[][] operation2 = UtilMethods.matrixMultiply(operation1, UtilMethods.transpose(arrayMatrix));

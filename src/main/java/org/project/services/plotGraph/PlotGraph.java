@@ -39,10 +39,10 @@ public class PlotGraph {
         String y_axis = "Signal";
         fig = new Plotting(width, height, title, x_axis, y_axis);
         fig.initialisePlot();
+        fig.addStylerCursor();
     }
 
     private void signalButterworthBandPassPlot(double[][] arrayFromDataFormatter) {
-        System.out.println(arrayFromDataFormatter.length);
         arrayFreqAmpl = new double[2][arrayFromDataFormatter.length - 1];
         Butterworth butterworth = new Butterworth(fs);
         int order = 4; //order of the filter
@@ -59,15 +59,12 @@ public class PlotGraph {
         /**
          * testSignal
          */
-        double[] unFiltersAmplitude = new double[arrayFromDataFormatter.length - 1];
         for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
             double[] amplitude = arrayFromDataFormatter[i];
-            unFiltersAmplitude[i] = setAmplitude(amplitude);
+            arrayFreqAmpl[0][i] = setAmplitude(amplitude);
 
         }
-        double[] amplitude = butterworth.bandPassFilter(unFiltersAmplitude, order, lowCutOff, highCutOff);
-        //fig.addSignal("Signal", arrayFreqAmpl[1], unFiltersAmplitude, false);
-
+        double[] amplitude = butterworth.bandPassFilter(arrayFreqAmpl[0], order, lowCutOff, highCutOff);
         fig.addSignal("Signal2", arrayFreqAmpl[1], amplitude, false);
         fig.plot();
     }

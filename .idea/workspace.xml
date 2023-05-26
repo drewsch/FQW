@@ -10,6 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="test real time plot retrieve - fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/PreparedCalculationItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/ILogicalCalculationsUnKnownCoeff/ILogicalCalculationsUnKnownCoeff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTimeNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTimeNew.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,10 +89,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.5041021&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -196,6 +207,11 @@
       <workItem from="1684444132815" duration="5314000" />
       <workItem from="1684481541455" duration="17976000" />
       <workItem from="1684693875863" duration="303000" />
+      <workItem from="1684838175487" duration="5165000" />
+      <workItem from="1684861783230" duration="15875000" />
+      <workItem from="1684922815061" duration="4991000" />
+      <workItem from="1685003132332" duration="18653000" />
+      <workItem from="1685111654548" duration="995000" />
     </task>
     <task id="LOCAL-00001" summary="test reading complete">
       <created>1679256344480</created>
@@ -353,5 +369,19 @@
     <MESSAGE value="test real time plot retive" />
     <MESSAGE value="test real time plot retrieve - fix" />
     <option name="LAST_COMMIT_MESSAGE" value="test real time plot retrieve - fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

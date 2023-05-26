@@ -11,10 +11,10 @@
 //        Object obj = e.getSource();
 //        if (obj instanceof JCheckBox checkBox) {
 //            if (checkBox.isSelected()) {
-//                a9TextField9.setEnabled(true);
+//                textField.setEnabled(true);
 //            } else {
-//                a9TextField9.setEnabled(false);
-//                a9TextField9.setText("0");
+//                textField.setEnabled(false);
+//                textField.setText("0");
 //            }
 //        }
 //    }
