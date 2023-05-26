@@ -1,6 +1,8 @@
 package org.project.services.calculationLogic;
 
 import com.github.psambit9791.jdsp.misc.UtilMethods;
+import org.project.services.FreqCalcAlgoService.CalculatedData;
+import org.project.services.FreqCalcAlgoService.CalculatedDataBuilder;
 import org.project.services.calculationAlgorithmFQ.CalculationAlgorithm;
 import org.project.services.calculationAlgorithmFQ.PreparedCalculationItem;
 
@@ -19,48 +21,47 @@ public class CalculationCard2 {
         return columns;
     }
 
-    public void linearEquations(Component[] comps, int[][] checkCase, int counterClickButtonCard2, JTextField inputRealEps, String filePath) {
+    public void linearEquations(Component[] comps, int[][] checkCase, int counterClickButtonCard2, JTextField inputRealEps, CalculatedData calculatedData) {
         realEps.add(Double.parseDouble(inputRealEps.getText()));
-        CalculationAlgorithm calculationAlgorithm = new CalculationAlgorithm(new PreparedCalculationItem(filePath));
         for (Component comp : comps) {
             if (comp instanceof JCheckBox box) {
                 if (box.isSelected()) {
                     switch (box.getName()) {
                         case "zero" -> coefficientEquations.add(0.0);
                         case "one" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA1());
+                            coefficientEquations.add(calculatedData.getA1());
                             checkCase[counterClickButtonCard2 - 1][1] = 1;
                         }
                         case "two" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA2());
+                            coefficientEquations.add(calculatedData.getA2());
                             checkCase[counterClickButtonCard2 - 1][2] = 1;
                         }
                         case "free" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA3());
+                            coefficientEquations.add(calculatedData.getA3());
                             checkCase[counterClickButtonCard2 - 1][3] = 1;
                         }
                         case "four" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA4());
+                            coefficientEquations.add(calculatedData.getA4());
                             checkCase[counterClickButtonCard2 - 1][4] = 1;
                         }
                         case "five" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA5());
+                            coefficientEquations.add(calculatedData.getA5());
                             checkCase[counterClickButtonCard2 - 1][5] = 1;
                         }
                         case "six" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA6());
+                            coefficientEquations.add(calculatedData.getA6());
                             checkCase[counterClickButtonCard2 - 1][6] = 1;
                         }
                         case "seven" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA7());
+                            coefficientEquations.add(calculatedData.getA7());
                             checkCase[counterClickButtonCard2 - 1][7] = 1;
                         }
                         case "eight" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA8());
+                            coefficientEquations.add(calculatedData.getA8());
                             checkCase[counterClickButtonCard2 - 1][8] = 1;
                         }
                         case "nine" -> {
-                            coefficientEquations.add(calculationAlgorithm.getA9());
+                            coefficientEquations.add(calculatedData.getA9());
                             checkCase[counterClickButtonCard2 - 1][9] = 1;
                         }
                     }

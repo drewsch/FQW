@@ -10,18 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e22e0613-718a-4503-b216-9b3c3dd2ac05" name="Changes" comment="test real time plot retrieve - fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/PreparedCalculationItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2B.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/CalculatedDataBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/project/services/FreqCalcAlgoService/DataFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/GUIMainForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/ILogicalCalculationsUnKnownCoeff/ILogicalCalculationsUnKnownCoeff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/buttonInteraction/ActionCheckBoxesA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationAlgorithmFQ/CalculationAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/calculationLogic/CalculationCard2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTimeNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/project/services/plotGraph/PlotRealTimeNew.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +100,7 @@
       <recent name="C:\Users\Андрей\Desktop\FQW\FQW" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.project.services.FreqCalcAlgoService" />
       <recent name="org.project.services.plotGraph" />
     </key>
   </component>

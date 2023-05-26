@@ -3,9 +3,12 @@
  */
 package org.project.services;
 
+import org.project.services.FreqCalcAlgoService.CalculatedData;
+import org.project.services.FreqCalcAlgoService.CalculatedDataBuilder;
 import org.project.services.ILogicalCalculationsKnownCoeff.ILogicalCalculationsKnownCoeff;
 import org.project.services.UartSender.UartSender;
 import org.project.services.buttonInteraction.ActionCheckBoxesOutputA;
+import org.project.services.calculationAlgorithmFQ.PreparedCalculationItem;
 import org.project.services.calculationLogic.CalculationCard1;
 import org.project.services.calculationLogic.CalculationCard2;
 import org.project.services.calculationLogic.CalculationCard2B;
@@ -61,7 +64,7 @@ public class GUIMainForm extends JFrame {
     private JPanel cardUnknownCoefficientsPanel;
     private JPanel outputCoefficientsCard2;
 
-    final private HashMap<Integer, JTextField> A_COEFS_TO_FIELDS_MAP = new HashMap<>(){{
+    final private HashMap<Integer, JTextField> A_COEFS_TO_FIELDS_MAP = new HashMap<>() {{
         put(0, outputCoefA0);
         put(1, outputCoefA1);
         put(2, outputCoefA2);
@@ -74,16 +77,16 @@ public class GUIMainForm extends JFrame {
         put(9, outputCoefA9);
     }};
     final private HashMap<Integer, JTextField> B_COEFC_TO_FiELDS_MAP = new HashMap<>() {{
-        put(0,outputCoefB0);
-        put(1,outputCoefB1);
-        put(2,outputCoefB2);
-        put(3,outputCoefB3);
-        put(4,outputCoefB4);
-        put(5,outputCoefB5);
-        put(6,outputCoefB6);
-        put(7,outputCoefB7);
-        put(8,outputCoefB8);
-        put(9,outputCoefB9);
+        put(0, outputCoefB0);
+        put(1, outputCoefB1);
+        put(2, outputCoefB2);
+        put(3, outputCoefB3);
+        put(4, outputCoefB4);
+        put(5, outputCoefB5);
+        put(6, outputCoefB6);
+        put(7, outputCoefB7);
+        put(8, outputCoefB8);
+        put(9, outputCoefB9);
     }};
     private JTextField outputCoefA0;
     private JTextField outputCoefA1;
@@ -243,16 +246,26 @@ public class GUIMainForm extends JFrame {
                     System.exit(0);
                 }
             }
+
             @Override
-            public void windowClosed(WindowEvent e) {}
+            public void windowClosed(WindowEvent e) {
+            }
+
             @Override
-            public void windowIconified(WindowEvent e) {}
+            public void windowIconified(WindowEvent e) {
+            }
+
             @Override
-            public void windowDeiconified(WindowEvent e) {}
+            public void windowDeiconified(WindowEvent e) {
+            }
+
             @Override
-            public void windowActivated(WindowEvent e) {}
+            public void windowActivated(WindowEvent e) {
+            }
+
             @Override
-            public void windowDeactivated(WindowEvent e) {}
+            public void windowDeactivated(WindowEvent e) {
+            }
         });
     }
 
@@ -537,7 +550,7 @@ public class GUIMainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 floatingPanel.setVisible(true);
-               // timeGraph = Double.parseDouble(deltaTime.getText());
+                // timeGraph = Double.parseDouble(deltaTime.getText());
             }
         });
         buttonUnCountinueMeas.addActionListener(new ActionListener() {
@@ -549,7 +562,11 @@ public class GUIMainForm extends JFrame {
         mainButtonCard1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ILogicalCalculationsKnownCoeff calculations = new CalculationCard1(strFormatFile);
+                ILogicalCalculationsKnownCoeff calculations = new CalculationCard1(
+                        new CalculatedDataBuilder(
+                                new PreparedCalculationItem(strFormatFile)
+                        )
+                );
                 valueRealEpsCard1.setText(String.valueOf((calculations.calculationRealPArt(a0TextField0, a1TextField1, a2TextField2, a3TextField3, a4TextField4,
                         a5TextField5, a6TextField6, a7TextField7, a8TextField8, a9TextField9))));
 
@@ -675,15 +692,17 @@ public class GUIMainForm extends JFrame {
         mainButtonCard2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                CalculatedDataBuilder dataBuilder = new CalculatedDataBuilder(new PreparedCalculationItem(strFormatFile));
+                CalculatedData data = dataBuilder.build();
                 counterClickButtonCard2++;
                 Component[] comps = outputCoefficientsCard2.getComponents();
-                calculationCard2.linearEquations(comps, checkCase, counterClickButtonCard2, inputRealEps, strFormatFile);
+                calculationCard2.linearEquations(comps, checkCase, counterClickButtonCard2, inputRealEps, data);
                 if (counterClickButtonCard2 == sizeClicker) {
                     returnCoefficients(calculationCard2.calculationMatrix(calculationCard2.addNumberInMatrix(sizeClicker, checkCase)));
                 }
 
                 Component[] compsB = outputCoefficientsCard2B.getComponents();
-                calculationCard2B.linearEquations(compsB, checkCaseB, counterClickButtonCard2, inputImpEps, strFormatFile);
+                calculationCard2B.linearEquations(compsB, checkCaseB, counterClickButtonCard2, inputImpEps, data);
                 if (counterClickButtonCard2 == sizeClicker) {
                     returnCoefficientsB(calculationCard2B.calculationMatrix(calculationCard2B.addNumberInMatrix(sizeClicker, checkCaseB)));
                 }
@@ -748,9 +767,11 @@ public class GUIMainForm extends JFrame {
     private JTextField getOutputFieldA(int key) {
         return A_COEFS_TO_FIELDS_MAP.get(key);
     }
+
     private JTextField getOutputFieldB(int key) {
         return B_COEFC_TO_FiELDS_MAP.get(key);
     }
+
     private void setOutputText(JTextField output, double[][] matrix, int i) {
         output.setText(String.valueOf(matrix[i][0]));
     }
