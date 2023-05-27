@@ -188,6 +188,8 @@ public class GUIMainForm extends JFrame {
     private JPanel mainPanel23;
     private JLabel deltaTime;
     private JTextField fieldNameTau;
+    private JLabel frequencyMin;
+    private JLabel deltaFrequency;
     private final JFileChooser fc = new JFileChooser();
     public String strFormatFile = "data2.txt";
     private Thread mainThread = null;
@@ -360,7 +362,11 @@ public class GUIMainForm extends JFrame {
                 turnOnFilters.setEnabled(true);
                 buttonWithKnownCoef.setEnabled(true);
                 buttonWithUnknownCoef.setEnabled(true);
-                calculatedData = new CalculatedDataBuilder(new PreparedCalculationItem(strFormatFile)).build();
+                PreparedCalculationItem preparedCalculationItem = new PreparedCalculationItem(strFormatFile,
+                        slider1FreqMin.getValue() * returnPow(comboBox1),
+                        slider3DelFreq.getValue() * returnPow(comboBox3));
+
+                calculatedData = new CalculatedDataBuilder(preparedCalculationItem).build();
                 // TODO: отправка параметров по sendUart
                 // TODO: ожидание чтения Uart Reader
             }
@@ -423,7 +429,7 @@ public class GUIMainForm extends JFrame {
                 mainThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        plotGraph.signalPlot(strFormatFile, true);
+                        plotGraph.signalPlot(strFormatFile, true, slider1FreqMin.getValue() * returnPow(comboBox1), slider3DelFreq.getValue() * returnPow(comboBox3));
                     }
                 });
                 mainThread.start();

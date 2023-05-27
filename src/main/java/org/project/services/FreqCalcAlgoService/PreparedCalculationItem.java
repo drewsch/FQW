@@ -11,10 +11,12 @@ public class PreparedCalculationItem {
 
     private double[][] arrayAmplFreq;
 
-    private double delF = 1;
-    private int fmin = 3;
+    private double delF;
+    private double fmin;
 
-    public PreparedCalculationItem(String filePath) {
+    public PreparedCalculationItem(String filePath, double fmin, double delF) {
+        this.delF = delF;
+        this.fmin = fmin;
         this.startData(filePath);
     }
 
@@ -22,32 +24,21 @@ public class PreparedCalculationItem {
         return arrayAmplFreq;
     }
 
-    public void setDelF(double delF) {
-        this.delF = delF;
-    }
-
-    public void setFmin(int fmin) {
-        this.fmin = fmin;
-    }
-
     private void createData(double[][] arrayFromData) {
         arrayAmplFreq = new double[2][arrayFromData.length - 1];
         for (int i = 0; i < arrayFromData.length - 1; i++) {
-            arrayAmplFreq[1][i] = fmin + i * delF; // freq
+            arrayAmplFreq[1][i] = this.fmin + i * this.delF; // freq
             arrayAmplFreq[0][i] = setAmplitude(arrayFromData[i]); // amplitude
         }
+        System.out.println(Arrays.toString(arrayAmplFreq[1]));
     }
-
     private double setAmplitude(double[] amplitude) {
         double sum = 0;
         for (double v : amplitude) {
             sum += Math.abs(v);
         }
-
         return sum / amplitude.length;
     }
-
-
     public void startData(String strFormat) {
         try {
             createData(dataFormatter.format(strFormat));

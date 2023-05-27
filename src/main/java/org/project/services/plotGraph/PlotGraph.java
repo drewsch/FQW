@@ -46,33 +46,15 @@ public class PlotGraph {
     private void signalButterworthBandPassPlot(double[][] arrayFromDataFormatter) {
         Butterworth butterworth = new Butterworth(fs);
         int order = 4; //order of the filter
-
-//        for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
-//            double[] amplitude = butterworth.bandPassFilter(arrayFromDataFormatter[i], order, lowCutOff, highCutOff);
-//            arrayFreqAmpl[0][i] = setAmplitude(amplitude);
-//        }
-
-//        for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
-//            arrayFreqAmpl[1][i] = fmin + i * delF;
-//        }
-//
-//        /**
-//         * testSignal
-//         */
-//        for (int i = 0; i < arrayFromDataFormatter.length - 1; i++) {
-//            double[] amplitude = arrayFromDataFormatter[i];
-//            arrayFreqAmpl[0][i] = setAmplitude(amplitude);
-//
-//        }
         System.out.println(Arrays.deepToString(arrayFromDataFormatter));
         double[] amplitude = butterworth.bandPassFilter(arrayFromDataFormatter[0], order, lowCutOff, highCutOff);
         fig.addSignal("Signal2", arrayFromDataFormatter[1], amplitude, false);
         fig.plot();
     }
 
-    public void signalPlot(String strFormatFile, boolean isWithFilter) {
+    public void signalPlot(String strFormatFile, boolean isWithFilter, double fmin, double delF) {
         parametersGraph();
-        PreparedCalculationItem calculationItem = new PreparedCalculationItem(strFormatFile);
+        PreparedCalculationItem calculationItem = new PreparedCalculationItem(strFormatFile, fmin, delF);
         if (isWithFilter) {
             signalButterworthBandPassPlot(calculationItem.getArrayAmplFreq());
         }
